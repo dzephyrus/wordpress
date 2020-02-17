@@ -1,0 +1,3674 @@
+January 21th - Version 4.7.2
+
+fixed: js error backend ALB editor in setTimeout()
+fixed: removed sanitize titles in sliders – allows HTML tags again e.g. slider caption
+fixed: typo error in ALB timeline element
+fixed: ALB magazine element ignores checkbox setting no thumbnail
+fixed: php notice undefined index upload_folder in instagram widget
+fixed: Yelp icon shows after theme update even if not selected
+fixed: missing attribute target=_blank for some ALB elements after 4.7 update
+fixed: small typo in enfold-child/style.css
+fixed: problem with WP filter widget_text called with too few parameters from 3rd party plugin
+fixed: French translation removes columns select options in ALB icon grid
+fixed: disabled reCaptcha Cookie shows message even if reCaptcha disabled in contact form but active in theme options
+
+added: filter avf_default_yelp_url: allows to set yelp url if not set in Social Profile or ALB Social Share button
+added: filter avf_masonry_loop_entry_content: allows to filter content (e.g. to allow/skip HTML tags)
+added: filter avf_masonry_loop_entry_description: allows to filter description (e.g. to allow/skip HTML tags)
+
+tweak: ALB backend message for special custom pages 404, footer, maintenancemode when active/inactive
+tweak: remove schema markup from modal privacy popup - errors in checking markup on single blog posts
+
+updated: ALB version number to 4.7.1.1 in config-templatebuilder\avia-template-builder\php\template-builder.class.php
+updated: French language files
+updated: German language files de_DE - typo errors
+updated: Layerslider to the latest Version
+
+
+January 13th - Version 4.7.1
+
+ - fixed: some of the fixes in 4.7 were not applied properly due to a file merging error
+
+January 13th - Version 4.7
+
+improved: WP Block Editor support
+  - WC 3.8 CSS integration of new WooCommerce block elements
+  - CSS support for predefined colors for background and text from palette
+
+feature: New ALB modal popup design and structure (tabs, layout)
+feature: Events Manager elements support responsive settings and developer settings
+feature: ALB shortcode buttons in editor can be ordered by name (asc or desc) or default order
+feature: ALB Video element new options to autostart, loop, mute, hide controls
+feature: Add a start value to animated numbers
+feature: additional option fields to filter tabs and keep quick css when importing theme options settings file
+feature: additional option fields to filter tabs and keep quick css when reset of theme options
+feature: Buttons to export and import Layout Builder saved templates
+feature: Yelp Icon to social icons and icon font
+
+improved: Video and video slideshow fallback to muted if autoplay selected
+improved: Contactform number validation check now for positiv and negative numbers possible
+improved: handling of title attribute on blog post featured image
+improved: merged files filename extended with a unique timestamp
+improved: Google reCAPTCHA V3 script is now loaded with defer
+
+added: Contact form option "Autoresponder reply to email address"
+added: Allow woff2 icon fonts to enqueue and import
+
+added: action ava_popup_register_dynamic_templates to register templates needed by several ALB elements
+added: action ava_after_register_dynamic_templates_sc: override or add additional dynamic templates to a shortcode
+added: filter avf_featured_image_title_attr with context ‘loop_index’: allows to customize title attribute for featured image
+added: filter avf_optiospage_hide_tab: hide theme option tab in context
+added: filter avf_optiospage_hide_data_fields: hides theme option date field in context
+added: filter avf_add_google_analytics_cookies_to_custom_cookies
+added: filter avf_settings_import_filter_array: customize filters for import theme options settings to filter or skip imported settings
+added: filter avf_settings_reset_options_filter_array: customize filters for reset theme options settings
+added: filter avf_cookie_consent_for_md5: allows to control content for md5 hash for cookie consent message bar
+added: filter avf_header_setting_filter extended with $context
+added: filter avf_contact_form_incoming_mail: allows bulk modifications to incoming mail
+added: filter avf_contact_form_autoresponder_mail: allows bulk modifications to autoresponder mail
+added: filter avf_skip_mail_header_keys: allows to customize header string
+added: filter avf_skip_export_alb_template: allows to skip a specific template from exporting
+added: filter avf_skip_import_alb_template: allows to skip a specific template from import
+added: filter avf_translate_targeted_link_rel_attributes: allows to add additional attributes that are removed by WP
+added: filter avf_alb_taxonomy_values: WPML wrapper to translate object id's
+added: filter avf_alb_linkpicker_value: allows WPML to translate 'linkpicker' element id's
+added: filter avf_default_yelp_link: allows to change the yelp link depending on displayed blog post
+
+removed: filter avf_form_mail_header for autoresponder mail - use avf_contact_form_autoresponder_mail
+deprecated: filters in framework\php\class-form-generator.php send() might be removed in future versions - use avf_contact_form_incoming_mail and avf_contact_form_autoresponder_mail
+
+fixed: Bug in ALB required array when an empty array
+fixed: some typo errors
+fixed: new added ALB elements cannot be saved as templates when nested (sections, columns with content inside)
+fixed: duplicate protocol in instagram url for lightbox
+fixed: relevansi ajax search and admin-ajax.php error
+fixed: avia_auto_toc widget wrong checkbox value "smoothscroll"
+fixed: ARIA warning for Accordion ALB element
+fixed: Update debug info theme update enabled to support new Envato token
+fixed: Layerslider update info for bundled plugin might not remove update notification
+Fixed: Problem with Safari browsers and Do Not Track check
+fixed: Headline Rotator with typewriter animation and & in text
+fixed: WP 5.3 Media Uploader not showing sizes selectbox (theme option page upload image button) 
+fixed: WP 5.3 CSS theme option page selectboxes only partially clickable
+fixed: WP 5.3 social icons not shown and fb widget script id removed
+fixed: deactivated special pages like 404 cannot be accessed
+fixed: removed spaces around codeblock placeholder injection element
+fixed: Revolution Slider removed min-height style for newer sliders
+fixed: Allow to disable Advanced Layer Slider manually, scripts no longer loaded when not needed
+fixed: Set Theme options Enable Google Maps to disabled by default
+fixed: missing backend info for disabled ALB elements (Blog, Comments)
+fixed: theme options checkbox add support for required field for '{false}', '', '{true}', [checkbox value]
+fixed: theme options add support to add visual_group inside tab section in a tab
+fixed: added esc_html() to slideshow titles
+fixed: Contact form when check in php failed it does not show any message
+fixed: WP CLI warnings/errors undefined object $avia
+fixed: wrong $class->config in slideshow-layerslider.php
+fixed: WPML translation manager integration and problems with several ALB elements like portfolio and masonry sort buttons
+fixed: added font weights 400,600 to Quicksand
+fixed: PHP 7.4.1 notices
+fixed: Secondary loop in sliders breaking wp primary loop - results in broken columns ALB layout
+fixed: hide block editor tip popup on ALB editor page
+fixed: Google reCAPTCHA CSS in ALB contact form
+fixed: typo CSS error avia-disabled-forn -> avia-disabled-form
+
+- Developer theme options:
+    removed: theme support avia_template_builder_custom_css
+    removed: theme support avia_template_builder_custom_tab_toogle_id
+    removed: 'Custom CSS classes input field'
+    removed: 'ID attribute input field'
+    removed: 'Customize heading styling'
+    replaced by: 'Developer Input Fields'
+    added filter avf_alb_get_developer_settings: allows to customize displaying input fields
+    
+- GDPR:
+    added: theme support avia_gdpr_permanent_hide_message_bar - allows to permanently hide consent message bar but use cookie logic
+    added: theme support avia_supress_cookie_modal_html_creation to supress output of HTML for modal popup
+    added: js trigger avia-cookie-settings-changed
+    added: New Advanced Styling rules for Cookie Message bar buttons
+    added: aria-hidden true to cookie Message bar container to hide from screen readers
+    fixed: Scroll bug - modal popup can be closed clicking outside of modal window
+    fixed: Advanced Styling for Cookie Message bar not working
+    fixed: Cookie Consent and cache plugin problems
+    fixed: Removed Safari browsers for checking disable of cookies browser settings (throws uncatchable error)
+    fixed: missing call to esc_attr in html tooltip privacy reload page info
+    fixed: Invalid HTML in modal popup
+    improved Google Analytic input field:
+       - Google Analytics script is only loaded when allowed
+       - Scripts with class google_analytics_scripts are removed when user refuses Google tracking cookies
+       - Google Cookies are deleted when user refuses cookies
+
+updated: links to docu for developer information - cookie consent bar
+updated: Italian language files
+updated: German language files
+updated: Dutch language files
+updated: Polish language files
+updated: Persian language files
+updated: French language files
+updated: Layerslider to the latest version
+
+
+2019 October 1st - Version 4.6.3.1
+
+- fixed: minor typos and option settings on theme option page and logic behind
+
+
+Additional info for 4.6.3
+
+- new filter: avf_show_video_in_custom_lightbox - allows custom lightbox for videos
+- new trigger: avia-open-video-in-lightbox - video should be loaded in lightbox
+
+
+2019 September 30th - Version 4.6.3
+
+
+- added: videos can now be opened in lightbox if desired
+- added: theme support avia_privacy_ignore_browser_settings to disable browser settings checks
+- added: custom ID to ALB codeblock
+- added: backend toggle contaienr for better orgnisation of template builder options
+- added: rel="noreferrer noopener" for <a target="_blank"> and cross domain links to ALB elements, menus and other links
+- added: Replaced checkboxes with toggles on theme options page
+- new filter: avf_save_string_translated allows to manipulate a sanitized css class or id
+
+GDPR/DSGVO related improvements:
+	- improved: re arranged and cleaned up the Enfold Options Page for Privacy and Cookies
+	- added: theme support avia_privacy_basic_cookies_unchecked - allows to uncheck 2 basic toggles on initial pageload for new visitors when option selected "user must opt in"
+	- added: option to force a page reload when accepting/not accepting cookies/services
+	- added: Popup to inform user that page is reloading
+	- added: new button action "Accept all cookies and services, dismiss notification"
+	- added: shortcode av_privacy_accept_all_button - one click button to accept all cookies and services
+	- added: new filter: avf_auto_reload_message - allows to customize your reload message
+
+- improved: modal popup can only be closed with button or close icon (when no button)
+- improved: shortcodes and buttons are now disabled when cookie consent is disabled in theme options
+- improved: Google Analytics toggle is disabled and unchecked if user selects "Do Not Track" in browser
+- improved: added a description text option to several ALB elements in backend editor - allows to distinguish same elements with different content
+
+- fixed: Hide message bar badge when message bar is hidden by theme option
+- fixed: missing custom_class in ALB blog
+- fixed: double custom_class CSS in ALB codeblock
+- fixed: default blog style multi author CSS bug on mobiles (in blog.css)
+- fixed: ALB contact form, hidden labels, label text not visible beside checkbox
+- fixed: non unique id avia-menu when cloning if menu not in logo container
+- fixed: locally hosted section background video not working when Cookie Consent is enabled
+- fixed: problem with custom CSS and id's sanitizations to be too strict and incomplete
+- fixed: Minor CSS timeline issue on mobile devices
+
+- updated: German translations typo error, added some translations to de_DE_formal, de_CH, sync all 3 with source of 4.6.3
+- updated: Google Maps version 3.38
+
+
+
+
+
+2019 September 10th - Version 4.6.2
+
+- added: theme support "avia_privacy_show_cookie_info" - adds a tab to default modal popup window that show currently active and by js script accessable cookies (useful for developers to check)
+- added: theme color for reCaptchaV2 checkbox is light in backend
+- added: theme support "avia_recaptcha_show_legal_information" - shows Google reCaptcha Legal Information theme option select box to change Enfolds default behaviour (= show filterable standard text below submit button, hide badge on all pages
+- added: admin notice for GDPR update
+
+- fixed: Cookie consent "Link to page" not working after 4.6 update
+- fixed: E-Mail validation contact form on mobiles
+
+- removed: theme option "Select Theme Style For Verification In Backend" - reCaptcha V2
+- removed: deprecated framework code 
+
+- improved: GDPR/DSGVO implementation to support implementation prior 4.6:
+	- all cookies and services accepted by default, visitor can opt out
+	- Visitor must opt in if option requires this
+
+- improved: Documentation https://kriesi.at/documentation/enfold/privacy-cookies/
+- updated: layerslider to the latest version
+
+2019 September 5th - Version 4.6.1
+
+
+- added: heading tags selection to sliders:
+	- fullscreen slider
+	- fullwidth easy slider
+- added: backwards comp. support for theme support:
+	- avia_template_builder_custom_css
+	- avia_template_builder_custom_tab_toogle_id
+- added filter: avf_alb_tinymce_ignore_indent_fix - allows to supress fix for individual pages
+- added filter: avf_avia_backend_truncate_string - modify string before it is truncated e.g. for excerpt
+
+- fixed: DSGVO/GDPR problem with new cookies: fallback solution if not in custom modal popup
+- fixed: checkboxes of privacy policy messages not working
+- fixed: a compatibility issue with Multilang Plugins and Enfold Version 4.6
+- fixed: ALB tinyMCE tab indent/dedent not working for lists in visual mode
+
+- improved: moved audio player after videos in ALB menu
+
+- updated: German language file DE_formal
+- updated: Italien language file
+
+Additional info for 4.6
+
+- fixed: ALB tinyMCE tab indent/dedent not working for lists in visual mode
+- added filter: avf_alb_tinymce_ignore_indent_fix - allows to supress fix for individual pages
+- added filter: avf_avia_backend_truncate_string - modify string before it is truncated e.g. for excerpt
+
+2019 August 29th - Version 4.6
+
+- added: GDPR / DSGVO: Cookie Settings allow forced OPT-IN
+	- extended theme option settings in privacy tab
+    		- cookie consent message bar can now be hidden but modal popup and all function can be used
+    		- user can opt out / user must opt in
+    		- new button action "Do not accept and hide notification"
+    		- Alert message text if user clicks "Do not accept and hide notification" button
+    		- Show modal popup on pageload immediately when needed
+    		- Show an icon to reopen closed message bar
+    		- Add action buttons "Accept", "Discard" and "Link" to modal popup (hides default close lightbox button)
+    		- Additional custom cookies (e.g. set by plugins) can be added to be monitored for removing
+	- Default modal privacy popup extendend to reflect new situation
+	- Switching to "User must opt in" resets all settings to only allow essential cookies and user has to accept or refuse this again and can opt in for other services
+	- If user refuses Google reCaptcha in contact forms a filterable message is shown instead of submit button
+	- A custom lightbox can be used (js wrapper function needed - avia_cookie_consent_modal_callback)
+
+- added shortcodes for privacy:
+    	- av_privacy_allow_cookies (toggle)
+    	- av_privacy_accept_essential_cookies (toggle)
+    	- av_privacy_google_recaptcha (toggle)
+    	- av_privacy_custom_cookie (toggle)
+    	- av_privacy_accept_button
+    	- av_privacy_do_not_accept_button
+    	- av_privacy_modal_popup_button
+    	- av_privacy_cookie_info
+	
+- added filters for privacy:
+        - 'avf_privacy_cookie_infos' - filter to change info text for cookies
+        - 'avf_admin_keep_cookies' - filter the cookies that are kept for admins
+        - 'avf_contact_form_recaptcha_disabled_msg' - filter to change message text that a contact form cannot be submitted because sevice disabled
+        - 'avf_privacy_additional_frontend_data' - filter frontend messages
+        - 'avf_privacy_custom_cookies_array' - filter theme options custom cookie array
+
+- added: backwards comp. for revslider < 6.0 (removed when adding fixes for > 6.0 
+- added: theme option "ID attribute input field" (Layout Builder tab)
+- added: theme option "Customize heading tags" (Layout Builder tab)
+- added: Developer tab to modal popup of alb elements
+- added: id attribute to most alb elements - value is sanitized
+- added: Custom CSS input value is now sanitized
+- added: WhatsApp share button and social icon
+- added: HTML title and alt attribute to transparent logo
+- added: HTML title attribute to logo
+- added: change default heading tags, and add a custom heading class (value is sanitized) to:
+	- Contact Form
+	- Content Slider
+	- Events Countdown
+	- Icon Box
+	- Icon Grid
+	- Icon List
+	- Partner/Logo Element
+	- Magazine
+	- Easy Slider
+	- Accordion Slider
+	- Featured Image Slider
+- added: User editable aria-label attribute to:
+	- Color Section
+	- Tab Section
+	- Grid Row
+	- Contact Form
+- added: filters:
+	- 'avf_the_content' - filter for content replacement by 3rd party plugins (toolset) 
+	- 'avf_disable_recaptchaV3_for_post' - filter to suppress loading of API for special posts/pages
+	- 'avf_google_recaptcha_badge_content' - filter to change default Google display text instead of badge icon
+	- 'avf_load_google_recaptcha_api_prohibited' - filter allows to suppress loading of script (on desired pages)
+	- 'avf_recaptcha_show_extended_error_messages' - filter to allow other logged in users roles to see error messages (default is admin)
+	- 'avf_recaptcha_transient_expiration' - filter to change transient expiration time (default 30 min.)
+	- 'avf_form_autoresponder_email_from_prefix' - filter to change from prefix text - default get_bloginfo('name');
+ 	- 'avf_copyright_info' - filter to change theme options copyright text in footer
+	- 'avf_colorpicker_colors' - filter to change default color picker palette colors
+	- 'avf_logo_title' - filter to change saved image title when used as logo
+	- 'avf_hide_transparency_logo_meta' - filter to hide title and alt attribute 
+	- 'avf_alb_get_developer_settings' - filter theme options
+	- 'avf_alb_element_heading_tags' - filter possible tags for element
+	- 'avf_alb_exec_sc_only' - filter to force execution of ALB shortcode
+
+- added: filter for plugins to handle HTML video output
+- added: Google Services backend: Feedback if API cannot be loaded (e.g. internet connection problems)
+- added: option to allow to filter upcoming events by events category
+- added: option to add title attribute to buttons
+- added: Enter open/close accordion tabs when focus on title for ADA support
+- added: aria-label and role="search" to ajax search icon and popup
+- added: info message that audio player does no longer stop on FF if js compression enabled since WP 5.2
+- added: information about sticky fullwidth submenu and burger menu
+- added: option to change display name of social link target on social share buttons and aria label
+- added: "From" field to ALB contact form options to specify a custom from address
+- added: "Reply To" to mails sent to contact form reciepients (Option Your email address)
+- added: New instagram icon to icon font
+- added: filter avf_customize_heading_settings in helper-social-media.php
+- added: filter avf_process_shortcode_in_backend
+- added: compatibility for relevanssi search in core (ALB elements, ajax search)
+- added: YOAST - evaluate shortcodes on saving post and ajax callback wpseo_filter_shortcodes
+- added: PHP version info to Theme Updates info box
+- added: Option to disable Google Maps in frontend (replaces filter avf_load_google_map_api_prohibited)
+- added: action ava_deactivate_enfold_plugin_addons
+- added: filter avf_exclude_taxonomies_magazine
+- added: ALB magazine element options to display author, category, tags
+
+- improved: filter avf_logo
+- improved: Compatibility with Polylang and Cookie Consent Message translations
+- improved: added option to disable ssl in file merging check when creating compressed file
+- improved: Contact form hidden labels now only hidden with CSS for screen readers and accessibility tree
+- improved: allow to zoom screen on mobile devices
+- improved: replace deprecated jQuery methods bind, unbind, live with on, off
+- improved: Switch Instagram links to HTTPS 
+- improved: ADA Compliance for Scroll to top button
+- improved: Compatibility with PHP 7.3 to avoid deprecated notices
+- improved: Screen Options code refactored for easier maintainence
+- improved: animated numbers show formatted in backend preview (modal popup)
+- improved: config files for not used plugins are no longer loaded
+- improved: Google reCAPTCHA implementation
+	- added key verification in backend for version 2 and version 3
+	- added several backend options( e.g. to hide google badge and show message text only, ..... )
+	- added in case V3 verification fails in frontend V2 checkbox is shown to verify human
+	- added options in ALB and shortcode contact form to select type of human verification
+	- added a single to use token to contact form to check submit when V2 or V3 is used
+- improved: Check if verified keys have been changed without verifying:
+	- reCAPTCHA
+	- Google Maps
+	- Mailchimp
+	- Envato token (theme update tab)
+
+- fixed: AudioPlayer does not stop looping playlist since WP 5.2
+- fixed: notice undefined property in helper-social-media.php
+- fixed: issue with Block editor popups not being visible
+- fixed: issue rendering footer shortcodes on bbPress pages
+- fixed: WP 5.2 Uncaught error: Class ‘ShortcodeHelper’ not found in template-builder.class.php
+- fixed: problem with Envato API error message
+- fixed: issue with Image effect in Masonry element
+- fixed: issue with Tab Section element on Safari
+- fixed: jQuery migrate notices on theme options page
+- fixed: upcoming events - next event not queried correctly
+- fixed: bug with custom styling colors in "Accordion" element
+- fixed: bug on template-archives page tabs not displayed when "Only needed elements" selected
+- fixed: Revolution Slider 6.x deprecated function name getArrSlidersShort ( new: get_sliders_short ) and changed database structure
+- fixed: German translation bug
+- fixed: IE11 not supporting array.includes() method
+- fixed: Gutenberg - H1 and H2 elements displayed in all capitals on backend
+- fixed: contact form subject and special characters in site name returned special HTML character
+- fixed: numeric captcha input cursor is above equation
+
+- updated: Italian translation
+- updated: language file de_DE_formal 
+
+
+- removed: Google Plus options due to shut down
+- removed: theme support avia_template_builder_custom_css use theme option or filter avf_alb_get_extended_settings instead
+- removed: theme support avia_template_builder_custom_tab_toogle_id (theme option "ID attribute input field" used instead)
+- removed: filter avf_load_google_map_api_prohibited
+
+
+2019 May 10th - Version 4.5.7
+
+- added: option to switch to burger menu on different screen sizes in Fullwidth Submenu element
+- added: option to use custom percent value for height in Color Section and GridRow elements 
+- added: new filters to manage WPML language Urls 
+- added: filter avf_single_event_upcoming_html
+- added: Columns - add alt and text attribute to screenreader a tag
+- added: filter avf_wc_product_order_dropdown_frontend - used on WooCommerce archive pages and ALB elements
+- added: Hotspot image new option hover open - click to close
+- added: language file for de_CH
+- added: Filter avf_verification_password_field to change verification input field to password
+- added: filter avf_post_nav_loop_args (better compatibility with standard WP function get_adjacent_post() )
+- added: Filter ava_popup_elements_loaded
+- added: Date query option to various ALB elements:
+	- Blog Post
+	- Post Slider
+	- Magazine
+	- Portfolio Grid
+	- Masonry
+	- Featured Image Slider
+	- Accordeon Slider
+
+- fixed: a bug with ALB shortcode on non ALB pages
+- fixed: a bug with changed query parameters for upcoming events
+- fixed: an empty string caused problem with translation plugin
+- fixed: deprecated function get_woocommerce_term_meta
+- fixed: Events Countdown Date Query changed
+- fixed: custom CSS class were cleared when switching option "Show element options for developers"
+- fixed: Events Count Down - Events Calendar changed internal post data structure
+- fixed: Changed WC default sort order to DESC (if not set by option)
+- fixed: Problem with content slider not showing
+- fixed: Notice: Trying to get property of non-object in framework\php\class-grecaptcha.php
+- fixed: Problem with Google Recaptcha and Enfold file merging and compression, exclude reCAPTCHA_API js from compression
+- fixed: Problem with bbPress and ALB shortcodes in "Page As Footer" page
+- fixed: problem with not translatable string "Share this entry"
+
+- improved: automated color calculations
+- improved: switching relative Urls to absolute Urls in compression of css files
+- improved: activate reCAPTCHA only on pages with the contact form element
+- improved: Google Maps widget and ALB element give feedback when API disabled with filter avf_load_google_map_api_prohibited
+
+- updated: Swedish language files 
+
+2019 April 18th - Version 4.5.6
+
+- added: new wp_body_open hook/function that was added by WP 5.2
+- added: file filter for asset merging script and to customize heading tags
+- added: aria-label to social icon links
+- added: small CSS font declaration improvements
+- added: added option to select timezone when using the animated countdown element
+- added: added options to animated numbers element to select thousand seperator and slow down animation
+
+- fixed: an issue with older PHP versions
+- fixed: several smaller spelling Errors
+- fixed: custom Gutenberg Title Background Color is now displayed properly
+- fixed: a JS error with the google recaptcha script
+- fixed: missing events calender post nav
+- fixed: an issue with edit button in admin bar on archive pages
+- fixed: a bug with inline styles for some ALB elements
+- fixed: an issue with PHP notices when using the font uploader
+- fixed: an issue with the masonry pagination
+- fixed: an issue with blog element pagination
+
+
+- improved: compatibility with 3rd party SEO Plugins
+- improved: handling of theme colors in case user adds a wrong color code
+- improvements for Woocommerce 3.5.7: 
+	- extended sorting options for shop page and ALB elements
+	- added select box for ASC/DESC to 2 ALB elements
+	- sorting by price works for variable products now (lowest - highest)
+	- better integration in WC sorting logic
+	- adjusted description where to find default settings for catalog sorting
+	- Added pagination to ALB magazine element
+	- Improved ALB product elements
+
+
+2019 March 18th - Version 4.5.5
+
+- added: CSS for backend Gutenberg editor
+- added: option under general styling to disable custom Gutenberg Editor Styles in Backend
+
+- fixed: an issue with the Yoast Seo and shop page title
+- fixed: an issue with widgets in single product pages
+- fixed: an issue with pagination links in WordPress 5.1
+- fixed: an issue with alternate menu not shown when Logo and Main Menu are displayed in the sidebar
+- fixed: an issue with blurry slide content in Windows Chrome Browser
+- fixed: WPML Flag Urls are escaped properly
+- fixed: proper markup change for image
+- fixed: several smaller google recaptcha issues
+- fixed: issues with Rest API support
+- fixed: an issue with shortcodes used outside of template builder pages
+- fixed: a fatal error with PHP version 5.4
+- fixed: an issue with tinyMce formatting
+- fixed: an issue with the image hover effect not working with captions
+- fixed: timing of a filter applied to backend styles
+- fixed: performance filter for force inclusion of javascript and css assets when merging css or js files: "avf_force_include_asset" is now active
+
+- improved: instagram error messages for easier debugging
+- improved: file merging with relative urls should work better now
+- improved: added a filter for newsbox widget image size
+- improved: added admin bar filters for ADA compliance
+- improved: added several filter for font managment and template builder data
+- improved: added filter for metaboxes
+
+- updated: Layerslider Plugin to the latest version
+
+
+2019 February 7th - Version 4.5.4
+
+- added: several improvements for the Icongrid elements
+- added: Google reCaptcha for contact forms to the "Google Services" option page
+- fixed: an issue with the REST API not working
+- fixed: a WooCommerce issue where pricing was missing on variable products
+- fixed: an issue with the product list element not linking properly
+- fixed: an issue with updates not being recognized due to a caching bug
+- fixed: added the missing "don't display image on single post" option
+- fixed: hide Gutenberg welcome message when in ALB mode
+- fixed: issue with translation plugins and 404 redirects, custom footers and maintenance mode
+
+
+
+2019 January 22nd - Version 4.5.3
+
+- fixed: caching issue with instagram widget
+- fixed: portfolio grid sort when used in sidebar
+- fixed: Advanced style "widget links" are now applied properly to sections
+- fixed: A problem with WooCommerce reviews
+- fixed: A problem with a missing function in Wp SEO
+- improved: Envato Theme update API usage
+- improved: compatibility with All in One SEO Pack
+- improved: added notification for unapproved comments
+
+
+
+2018 December 18th - Version 4.5.2
+
+- added: theme option to switch between new block editor and older in classic editor
+- fixed: an issue with older entries not beeing properly editable in the Layout Builder due to the new the Gutenberg Editor interfering
+- fixed: an issue with date selection display within the search loop
+- fixed: an issue with CSS styling for ALB Blog when Multi Author is selected
+- improved: custom 404 page logic
+- improved: the Auto Updater with logging and some more time checks so it does not ping the envato api that often
+- improved: RTL Styles
+- updated: Persian language files
+
+
+2018 December 6th - Version 4.5.1
+
+- added: WordPress 5.0 Gutenberg/Block editor compatibility scripts
+- fixed: an issue with the sub menu element vanishing on page scroll
+- fixed: an issue with WPML when no main menu was assigned
+- fixed: an issue with select element arrows not displaying properly in Firefox
+- fixed: an issue with the Icon Grid Element being broken in Firefox
+- fixed: prevent advanced styles border settings from breaking button
+- fixed: option for disabling gallery thumbnails was not working properly and always should thumbnails
+- fixed: an issue with advanced styling options and some background logic improvements to related functions
+- fixed: typo in masonry css
+- fixed: an issue with fullwidth sub menu on mobile devices
+- fixed: an issue with the image "groe on hover" effect
+- fixed: a problem with non unique posttype labels in dropdown menus when 3rd party plugins were used
+- fixed: an issue with a slideshow php warning
+- fixed: an issue with icongrid font size options not getting applied
+- fixed: an issue with the easyslider background style
+
+-improved: Breadcrumbs Navigation: Add filter and logic, removed deprecated function
+- updated: NL language Files
+- updated: Layerslider to the latest version
+
+
+
+2018 October 10th - Version 4.5
+
+- added: new demo: Enfold Agency
+- added: new demo: Enfold Knowledgebase
+
+- added: new element: Ajax Search Form
+- added: new Element: Icon Grid Element with Flipbox or Tooltip
+- added: option to chose an alternate main menu for mobile devices
+- added: box shadow for columns
+- added: compatibility with the Gutenberg WordPress Editor Plugin (once the editor is added to the WordPress core a more sophisticated solution will be applied)
+- added: option to link special headings
+- added: custom margins for color sections
+- added: a new option to enable a separate sidebar for archive pages instead of using the 'blog sidebar'
+- added: additional blog list layouts
+- added: options to visually wrap an Animated Numbers element into a circle
+- added: Table of contents widget, which allows to automatically collect the content of a page based on the headings used
+- added: Various additional styling options for the advanced styling blocks.
+- added: new options for the timeline element to display "steps" (like: step 1: register, step 2: confirm, step 3: etc)
+- added: Text alignment option for left sidebar
+- added: Highlight column by slightly increasing its 
+- added: Additional accordion styles
+- added: new sidebar styling
+- added: option to display a data privacy checkbox to registration form
+- added: filter that allows plugins to translate a footer template page
+- added: new Product snippet element to display woocommerce price as template builder element
+- added: RTL support for portfolio and masonry grids
+- added: a re-coded version of the combowidget was re-introduced to the theme
+- added: option to always load the mediaelement scripts, in case it is required for 3rd party plugins
+- added: extra hover effects for masonry images: (grayscale/desaurationt/blur)
+
+- improved: the theme updater now works with the latest Envato API version. Please not: you will need to generate a new token for updates
+- improved: added support for smoothscroll for clickable columns and cells
+- improved: contact form auto responder email can now be set and various filter names have been updated
+- improved: backend element preview
+- improved: added the option to enable/disable animations for the following elements: Masonry Entries, Masonry Gallery, Gallery, Icon List, Timeline, Icon
+- improved: added support for WP Embed for ALB pages
+- improved: classes to prev page/ next page pagination and a filter for output
+- improved: added a filter to allow 3rd party scripts to force load media element in frontend
+- improved: added support for custom post type select for magazine element
+- improved: the theme updater script
+- improved: Allow tabs to be selected using keyboard navigation only
+- improved: Events Calendar Styling rules
+- improved: Google maps values can be filtered programmatically now
+- improved: Social media buttons all link to https now
+- improved: added a filter to programmatically change the google maps overlay image
+- improved: added rel='nofollow' to search link to avoid duplicate content in search engines
+- improved: lightbox behaviour for WooCommerce Galleries
+
+
+- fixed: an issue with layerslider fullwidth/responsive mode
+- fixed: an issue with multiple image uploads in shortcode popup
+- fixed: an issue with product review display
+- fixed: an issue with disabled elements and the data privacy modal window
+- fixed: an issue with RTL comment field display
+- fixed: some small spelling errors and typos
+- fixed: an issue with sticky transparent headers on tablet sized screens
+- fixed: a PHP warning caused by the instagram caching widget
+- fixed: an issue with the Masonry Gallery Lightbox title
+- fixed: changed schema.org address to https:
+- fixed: issue with cookie consent message not accepting modified font size
+- fixed: a problem with multiple tab sections on one page
+- fixed: phone number on tablet screen size 
+- fixed: a fallback image issue for slideshows
+- fixed: WPML bug not showing translated images
+- fixed: a WooCommerce shop page ordering conflict
+- fixed: Layerslider Text alignment when using RTL language
+- fixed: a protfolio grid column issue
+- fixed: an issue with the media gallery and IE11
+- fixed: empty inline background-image property for sections
+- fixed: img HTML tags syntax error for height and width
+- fixed: an empty translation string causing a PoEdit Error
+- fixed: an issue with circle images that are set to increase their size on hover
+- fixed: an issue with codeblock overwriting in ALB
+- fixed: an issue with horizontal gallery lightboxes if multiple galleries are active
+- fixed: undefined PHP notice for video element
+- fixed: added a check if the inital open tab value is valid
+- fixed: an issue with the overlay burger menu when the layout: "logo center/menu below" was selected
+- fixed: added missing link target to timeline element
+- fixed: a problem with codeblock in postcontent element
+- fixed: an issue with postboxes causing a javascript error on post saving
+- fixed: an issue with custom footers not being displayed fullwidth
+- fixed: an issue with portfolio javascript breaking on complex ALB pages
+
+
+- updated: several language files (german, spanish, hebrew)
+
+
+
+2018 June 4th - Version 4.4.1
+- added: filter in template builder file to allow caching of output
+- added: filter for the error message when user wants to comment but did not check the privacy policy checkbox
+- added: a product meta Template builder element that allows you to display info such as categories, tags and sku
+- added: option to stop audio player after last song in list instead of endless looping the player
+- added: an extra filter called "avf_output_google_webfonts_script" that allows to programmatically deactivate google fonts
+- fixed: an issue with the contentslider breaking the layout when the blog was disabled
+- fixed: an issue with the german translation file, using fuzzy strings and displaying Mailchimp API Notificaftions instead of Google map notifications
+- fixed: an issue that prevented logged in users from saving comments
+- fixed: an issue with background videos not playing if conditional loading of elements is enabled
+- fixed: an issue with backend page options not clickable due to a div overlay
+- fixed: a php error notice when updating WooCommerce
+- fixed: a php error notice with upsells and related products in WooCommerce
+- fixed: facebook widget displayed incorrectly when updating from earlier theme versions
+- fixed: an issue with WPML and custom 404 pages
+- fixed: an issue were the advanced layout builder covers the scrollbar in fullscreen mode
+- fixed: an issue with disappearing testimonial images
+- fixed: an issue with duplicate burger menus
+- fixed: an issue with the Google Maps check, returning a positive validation check on empty input
+- fixed: an issue with post navigation when footer page was selected
+- fixed: an issue with the instagram widget when set to caching images
+- improved: linked youtube videos now recognise appended parameters like autoplay and video starting point
+- improved: added the html attribute muted to silent html5 background videos, which allows for more consistent autoplay with adblock
+- improved: Description of google analytics admin description
+- improved: visual appearance of the new on/off privacy shortcode toggles
+- improved: uploaded fonts are not displayed at the end of the font list, instead of beginning
+- improved: HTML structure of blog post header when using elegant or modern blog
+- improved: made 2 new functions compatible with php version 5.3.29
+- improved: backend google analytics description
+- improved: extended email check for forms
+- updated: language files de_DE
+
+
+2018 May 22th - Version 4.4
+- added: new demo: Enfold Law
+- added: cookie consent bar got an improved way of adding unlimited buttons
+- added: cookie consent bar got an option to display a modal window with detailed information and the possibility to deactivate some cookies and features
+- added: custom font uploader - you can now upload and use any font you like
+- added: the facebook page widget got a "data protection" mode were it does not load the facebook javascript without user interaction
+- added: the instagram widget got a "data protection" mode were it does store all images on your own server
+- added: google maps got a "data protection" mode that allows to load the maps API only when the user clicks on a google map fallback image
+- added: shortcode that can be used in your data protection policy that allows the visitor to disable google analytics tracking
+- added: shortcode that can be used in your data protection policy that allows the visitor to disable google web fonts
+- added: shortcode that can be used in your data protection policy that allows the visitor to disable youtube and vimeo video embeds
+- added: shortcode that can be used in your data protection policy that allows the visitor to disable google map embeds
+- added: option to add a checkbox to all comment forms that asks for approval of your privacy policy before sending the form
+- added: option to add a checkbox to all contact forms that asks for approval of your privacy policy before sending the form
+- added: option to add a checkbox to all newsletter forms that asks for approval of your privacy policy before sending the form
+- added: option to add a checkbox to your login form that asks for approval of your privacy policy before logging in
+- improved: cookie management for portfolio breadcrumb navigation is deactivated if breadcrumbs are deactivated
+- fixed: an issue with safari admin menu 
+- fixed: an issue with the linkpicker not displaying all posts to select
+
+
+2018 May 14th - Version 4.3.2
+- added: a new action hook in header.php for 3rd party scripts
+- fixed: an issue with the medial demo import
+- fixed: duplicate breadcrumb trails
+- fixed: rewriting of image urls in compressed css files
+- fixed: audio player opened audio file in new tab when page transition was enabled
+- fixed: url in slideshow.css background
+- fixed: button row hover not working properly
+- fixed: an issue with the audio player throwing a php notice when disabled
+- fixed: added missing custom css class for timeline element
+- fixed: an issue with asset compression crashing
+- fixed: self hosted videos now properly use the autoplay setting
+- fixed: an issue with the woocommerce lightbox on single product pages when no product gallery is used
+- fixed: an issue with repeating background images when they should not repeat
+- fixed: an issue with compressed files not saving properly on "localhost"
+- improved: default layerslider shortcode is also detected when loading a page
+- updated: some language files
+
+
+2018 April 26th - Version 4.3.1
+- added: new custom 404 page to the latest demo
+- added: output filter for template builder elements
+- added: Logoslider/Grid option to not stretch images (basically allows to work like in pre-enfold 4.3 versions)
+- fixed: several smaller spelling and translation errors
+- fixed: an issue with the footer page not accessible when the setting was disabled
+- fixed: small gaps between columns with link applied to them
+- fixed: video element not loading the necessary javascript files
+- fixed: Fix maintenance mode not working with Yoast
+- fixed: missing custom class for button row element
+- fixed: an issue with the product review snippet
+- fixed: a Timeline Mobile Carousel Issue
+- fixed: image copyright showing in backend
+- improved: caching plugin detection in backend
+- improved: maintenance, 404 and footer page are now better labeled in the page edit screen
+
+2018 April 24th - Version 4.3
+- added: new theme demo: elegant portfolio
+- added: performance tab in theme options that allows you to improve your website performance by using file compression/removal
+- added: button row element that allows to display multiple buttons beside each other
+- added: new "typewriter" animation for rotating header element
+- added: you can now set links for columns and cells
+- added: you can now set a page as footer. This allows completely different footer designs
+- added: option to close the notification template builder element and set a cookie  to not display it again
+- added: option to use background gradients for cells, columns and sections
+- added: option to display a cookie use notification
+- added: option to display button label as tooltip (that way you can use icon only buttons with hover effect)
+- added: option to set a custom 404 page layout
+- added: copyright option for image element
+- added: plugin check for image optimization and caching plugins
+- added: plugin recommendation for image optimization and caching plugins
+- added: advanced styling option to style the active main menu item
+- added: new google fonts
+- added: margin spacing options for header element and header rotation element
+- added: special heading font size now allows you to select a font size that adapts to your browser window size 
+- added: heading rotator font size now allows you to select a font size that adapts to your browser window size 
+- improved: several CSS and JS files will now only load if they are required, based on the theme option settings
+- improved: demo import script
+- improved: cleaned up default 404 page
+- improved: display of the log/partner element. images will now fill the whole space available to them
+- fixed: buttons in main menu now always got the same height
+- fixed: usage of the old jQuery Migrate Library no longer necessary due to JS improvements
+- fixed: backwards comp. with PHP < 5.5 in header.php
+- fixed: slideshow fallback link handling for easy slider
+- fixed: an issue with the size of self hosted videos
+- fixed: loading of instagram images works properly again
+- fixed: backwards compatibility issues wit RTL styling
+- fixed: ALB color section: Small Arrow in Bottom Border Styling shows up twice
+- fixed: ALB Product Purchase Button and WooCommerce > 3.0 lead to endless loop
+- fixed: Small issue in not creating attributes in breadcrumb for first element
+- fixed: an issue with event calender tickets
+- fixed: an display issue with the shop main page and the breadcrumb navigation
+- fixed: an issue with image overlay display
+- fixed: WooCommerce Checkout will no longer show the inline Terms of Service Page if a pagebuilder page was selected as TOS page (this previously broke the Checkout page layout)
+- updated: layerslider plugin
+- removed: deprecated "avia combo" widget
+ 
+
+2018 March 7th - Version 4.2.6
+
+- fixed: an issue with the css/js compression script
+- fixed: Portfolio grid does not hide pagination when screen sizes selected and not fullwidth
+- improved: update notficiations
+- improved: translation handling with WPML
+- updated: Language files pl_PL
+
+
+2018 March 1st - Version 4.2.5
+- updated: new minor version number in style.css
+- fixed: a compatibility issue with php 5.3 and lower
+- fixed: a compatibility issue with the Wordfence security plugin
+- fixed: an issue with the partner/logo slider
+- fixed: Support for revisions for autosave and preview in ALB and non ALB pages
+- fixed: some minor spelling errors
+- fixed: an issue with the shopping cart icon not displaying properly
+- fixed: an issue with menu icons not being displayed in sidebar and footer when hidden in the header
+- fixed: an issue with product custom queries when WooCommerce was not enabled
+- fixed: an issue with YOAST SEO and Woocommerce Elements in Backend
+- improved: handling of 3rd party plugins in Woocommece button ALB element
+- improved: display data of events calendar pro on mobile
+- improved: we try to hide related youtube videos by default
+- improved: script and css loading for several template builder elements (work in progress, more will be added soon after further testing)
+- updated:  Language files it_IT
+
+2018 February 19th - Version 4.2.4
+- style.css - new version number
+- fixed: base colors when activating the theme and not saving any options
+- fixed: outdated spelling
+- fixed: issue with WordPress SEO php notice
+- fixed: issue with custom css classes not added to masonry
+- fixed: issue with 3rd party custom post types saving and ALB
+- fixed: issue with magic wand shortcodes and modal subwindow not loading
+- fixed: issue with tab sections titles and non latin characters breaking anchor links
+- fixed: issue with missing array declaration in theme updates error object (PHP7.0 related)
+- fixed: issue in class avia_masonry with load more button (PHP7.0 related)
+- fixed: a translation issue in the german translation file
+- fixed: broken links in the Enfold 2017 Demo
+- fixed: an issue with page transitions and the gallery shortcode
+- fixed: an issue with backend feature images selection when in posts/portfolio overview
+- fixed: an issue with events calendar pro recurring events and the masonry
+- fixed: an issue WooCommerce 3.3 and ALB productgrid/productslider element (function wc_reset_loop)
+- fixed: animation for linked icons
+- improved: asset inclusion like css and js files, in preparation for file compression
+- improved: allow to hide ALB shortcode parser meta box (backend) with screen options checkbox
+- updated: Magnificent Popup Lightbox
+
+
+
+
+2018 February 7th - Version 4.2.3
+
+- style.css - new version number
+- added: option to define fallback links for video slides on mobile and tablet devices
+- fixed: an ALB shortcode problem with closing tags
+- fixed: an array check to avoid a possible php notice
+- fixed: Audio player display in WordPress 4.9
+- fixed: several spelling errors
+- fixed: a problem with Video content not playing in Safari
+- fixed: a problem with tab section resizing
+- fixed: an issue with the Shopping Cart icon and caching plugins
+- improved: RTL handling in Advanced Layout Builder
+- improved: support for german special chars in contact form
+- improved: slightly improved the drag and drop handling of the ALB 
+- improved: add security ABSPATH check to several files
+- improved: small modifications to gravity form config file
+- improved: codeblock element allows to display code snippets now
+ 
+- updated: Language files de_DE, tr_TR, it_IT
+- updated: Layerslider Plugin to latest version
+
+
+2018 January 24th - Version 4.2.2
+
+- style.css - new version number
+- added: user defined menu classes for customisation are now also used in the burger menu
+- added: filter "avf_register_custom_backend_styles" to include custom php files in backend to allow for style modifications
+- fixed: any issue with videos in WordPress 4.9
+- fixed: a bug with tab section height change
+- fixed: a spelling error in the Layerslider Options
+- fixed: woocommerce shopping cart position when header custom height is chosen
+- fixed: a compatibility issue with the google maps widget
+- fixed: instagram overlay css fix
+- improved: information displayed on WooCommerce product elements
+- improved: make widget titles translatable by WPML
+- improved: add deprecate notice for function avia_set_title_tag() which is no longer in use
+- improved: internal handling of Gridrow and Cell Element
+- improved: schema.org image element markup
+- updated: several language files
+
+
+
+
+2018 January 18th - Version 4.2.1
+
+- style.css - new version number
+- added: option to manually disable the layerslider
+- fixed: an issue with shortcode generation, resulting in unclosed html structures
+- fixed: security issue that would allow an attacker to export your enfold settings
+- fixed: security issue that allowed an attacker to rewrite the portfolio permalink structure
+- fixed: an issue with instagram feed not loading images
+- fixed: an issue with main menu in iOS Safari
+- updated: layerslider plugin
+
+
+2017 October 23th - Version 4.2
+
+- added: 5 new demos for creatives
+	- band demo
+	- dj demo
+	- freelancer demo
+	- visual artist demo
+	- gaming demo
+
+- added: new template builder element: audio playlist
+- added: new google fonts
+- added: option to select color for section scroll down arrow
+- added: new styling and color options for the toggle shortcode
+- added: new wordpress filter to modify or remove main menu
+
+- improved: better handling/loading times of deactivated lightbox script 
+- improved: default mediaelement audio player styling is now more modern, cleaner and requires much less css
+- improved: several css files were trimed and others removed (1000 lines of css removed)
+- improved: performance of blog element and reduced database queries
+- improved: advanced options for link overlay display
+- improved: testimonials shortcode delimiter logic
+- improved: Plugin WP SEO integration with builder inserted images has been improved
+- improved: Horizontal gallery now shows navigation arrows on mobile devices
+- improved: Horizontal gallery allows to enter element ID now
+- improved: handling of special characters like line breaks in shortcodes
+- improved: tab section height handling when inner elements change their height
+- improved: scroll down arrow alignment
+- improved: several RTL css styles
+- improved: breadcrumb navigation in ssl environments
+- improved: removed an old filter from woocommerce
+- improved: google maps API key handling within the theme and the theme framework
+- improved: inclusion of layerslider plugin, so it does no longer show the update notice all the time
+
+
+- fixed: an issue with the toggle shortcode not animating when showing its content
+- fixed: issue with section overlays when a down arrow is used
+- fixed: an issue with tabsection names that did not contain any non special chars
+- fixed: an issue with the hamburger menu when empty links with subitems were used.
+- fixed: Horizontal gallery now works with custom links
+- fixed: Horizontal gallery now works with titles and captions in the lightbox
+- fixed: Horizontal gallery now no longer breaks if the number of the initial image is larger than the gallery image count
+- fixed: an issue with duplicate ids after a grid row element
+- fixed: a bug with tab section alignment on RTL setups
+- fixed: an issue with the Woocommerce checkout options on smaller screens
+- fixed: an issue with hotspot descriptions
+- fixed: an issue with demo import causing php notices
+- fixed: a few smaller issues with the new mobile menu
+- fixed: an issue with the post delimiter on custom made blog entries
+- fixed: an issue with the secondary menu items not visible if the main menu is displayed as burger icon
+- fixed: an issue with the shortcode wand and image with hotspot shortcode when not used as a template builder element
+- fixed: an issue with product search in woocommerce
+- fixed: an issue with mobile submenu cloning when the main menu is set to display in a sidebar
+- fixed: an issue with copy/pasted shortcodes
+- fixed: an issue with Zen Menu and Themify_Conditional_Menus
+- fixed: an issue with importing demo data in php 7
+- fixed: an issue with WPML and double language flags in the new mobile menu
+- fixed: an issue with diagonal bordered sections and scroll down arrows
+- fixed: an issue with burger menu social items on tablet screens
+- fixed: an display issue with icon elements following a delimiter
+- fixed: a bug with the caption shortcode within the textblock eelment
+
+
+- updated: layerslider plugin
+- updated: several translation files
+
+
+
+
+2017 July 17th - Version 4.1.2
+
+- style.css - new version number
+- added: sorting options for products in template builder elements
+- fixed: an issue with the layerslider 2017 demo import
+- fixed: an RTL issue with new mobile menu
+- fixed: a few spelling errors
+- fixed: an issue with html content when viewing a data table in mobile view
+
+
+
+2017 July 13th - Version 4.1.1
+
+- style.css - new version number
+- fixed: an alignment issue with menus displayed in the center below the logo
+- fixed: an issue with table html content on mobile view
+- fixed: a padding issue with the mobile burger menu item with some settings
+- improved: woocommerce product out of stock handling for masonry and slideshows
+
+2017 July 11th - Version 4.1
+
+- style.css - new version number
+
+- added: new photography theme demos: minimal photography and dark photography
+
+- added: new template builder element: horizontal gallery
+- added: new modern mobile menu with more options (old mobile menu item was removed)
+- added: new theme options tab for the main menu
+- added: several new options to edit and style the main menu on mobile devices
+- added: most elements received a "screen options" tab. 
+- added: visibility settings based on the screen options for all template builder elements
+- added: font size settings to the screen options tab for text based elements (eg headings)
+- added: column count settings based on the screen options for complex column based elements (eg masonry)
+- added: advanced styling options for the mobile menu to create unique fly-out and overlay menus
+- added: new theme options tab for the layout builder
+- added: option to disable the live preview in backend
+- added: option to enable custom css classes for template builder elements
+- added: option to disable the post navigation between single posts
+- added: google maps options to display Satellite, Hybrid or Terrain maps
+- added: team element option to change image size
+- added: Woocommerce can now add structured data to template builder elements
+- added: tab sections can be pre-opened by url now 
+- added: google maps key check is now done when entering the key for easier checking if the key is valid
+- added: new orientation for masonry image elements when set to "perfect grid" - you can now display images as squares, as well as landscape or portrait images of various sizes
+
+- fixed: an issue with broken columns in tab section in backend
+- fixed: breadcrumb function with custom shops
+- fixed: an issue with tab sections on firefox when more than one word was used for the tab title
+- fixed: several frontend issues with equal height tabs and columns within tabs
+- fixed: RTL related issues
+- fixed: an issue with shortcodes when they where copied from one page to another without using the default content field
+- fixed: several minor query issues with the latest version of Woocommerce
+- fixed: an issue with special chars in heading elements
+- fixed: woocommerce cart dropdown on the checkout page was not updated properly
+- fixed: several minor spelling errors in the template builder
+- fixed: portfolio custom links now work better with  various slideshows
+- fixed: a woocommerce issue with out of stock items
+- fixed: an issue with google maps click events and firefox
+- fixed: an issue with initial active item on tab sections
+- fixed: a problem with product layout settings
+- fixed: an issue with linked images inside the layerslider slideshow
+- fixed: a bug with portfolio ajax slideshows not autorotating or stoping after one cycle
+- fixed: a minor character encoding problem in the template builder
+- fixed: a display issue with comment forms when displayed after certain elements
+- fixed: a few minor issues with php 7.1
+- fixed: a menu display bug in ios 10+ when the items are animated
+- fixed: a z-index issue with section overlays
+- fixed: a problem with disabled backend options not beeing rendered properly after enabling them
+- fixed: a flickering issue caused by css with the main menu on webkit engines (chrome, safari, opera)
+- fixed: a validation issue with the mailchimp API key
+- fixed: an issue with the live preview not updating properly after an option change
+- fixed: a blog gallery bug when no sidebar blog was used in conjunction with the sidebar main menu
+- fixed: menu overlay sub level menu items font size and line height are now set properly
+- fixed: an issue with custom menu color settings and transparent menus
+
+
+- improved: search functionality can now be used on mobile phones
+- improved: cleanup of several CSS classes
+- improved: removal of several JS functions that were no longer needed and improvement of existing functions like menu and smoothscroll
+
+- updated: layerslider to the latest version
+- updated: several language translation files
+
+
+
+
+
+2017 May 16nd - Version 4.0.6
+
+	- style.css - new version number
+	- folder framework:
+		- improved: the style-generating script with new fallbacks if the dynamic style css file could not be created
+
+	- folder config-templatebuilder\avia-template-builder\assets\js:
+		- avia-builder.js: fixed broken layout with columns in tab section element
+
+	- folder config-templatebuilder/avia-shortcodes: 
+		- improved: class-framework-widgets.php - avia_newsbox make option translateable
+		- added: filter for custom contact form autoresponder
+		- fixed: contact form datepicker problem with empty label
+		- fixed: allow ',' in select option of contact form
+		- fixed: WC 3.0 deprecated notices and CSS
+		- fixed: shortcode "Product Purchase Button": variable product does not show any price when all have same price 
+		- added: option field for qual/variable height tab sections
+		- added: filter 'avf_postslider_show_catergories'
+		- fixed: "Equal Height Columns" breaks when columns are not 100% width (e.g. 1/3 1/3)
+		- fixed: "Equal Height Columns" breaks when columns are not 100% width (e.g. 1/3 1/3)
+		- fixed: An issue with the template builder modal window when tinyMCE editor was disabled
+		- added: Theme color highlight as default hover option for the fullwidth button
+		- removed: Pan control option from google maps element, since it was removed from the google API
+
+	- folder /css:
+		- fixed: a conflict with mailchimp embed classes
+	
+	- folder /js:
+		- shortcodes.js:
+ 			- added: functionality for tab_section.php (dynamic content height for tabs)
+			- fixed: Masonry Gallery not showing with lightbox deactivated
+
+	- folder config-layerslider: updated to the latest version
+
+	- functions-enfold.php: WP core bugfix on single custom post type page - paging not working
+	- includesHelper-main-menu.php: Small SEO improvements for header/logo
+
+	- add support for WooCommerce 3.0 product gallery:
+		- includes/admin/register-admin-options.php
+		- config-woocommerce/config.php
+		- config-woocommerce/woocommerce-mod.css
+
+
+
+2017 April 2nd - Version 4.0.5
+	- style.css - new version number
+	- folder config-layerslider: updated to the latest version
+	- folder config-woocommerce: updated compatibility with upcoming WooCommerce 3.0.0
+	- folder lang: updated some language files
+	- folder config-templatebuilder: fixed an issue with php 7
+
+
+2017 March 28th - Version 4.0.4
+	- style.css - new version number
+	- folder config-layerslider: updated to the latest version
+
+
+2017 March 20th - Version 4.0.3
+	- style.css - new version number
+	- improved: masonry sorting algorithm
+	- fixed: an issue that caused section HTML code to be nested wrong, which in turn causes display 
+	- fixed: an issue with the upcoming events countdown when the event already started
+	- fixed: an issue with section overlays causing invalid html markup and therefore creating visual issues
+	- fixed: an issue with the fullscreen slider when set to fixed bg
+	- fixed: an issue with blog navigation when the blog element was used on a portfolio page
+	- fixed: an issue with multiple sticky submenus not being sticky
+	- improved: handling of multiple first level menu items in submenu navigation
+
+
+2017 February 27th - Version 4.0.1 + 4.0.2
+
+	- style.css - new version number
+	- includes/admin/helper-compat-update.php - fixed an issue with older php versions that prevented admin access
+
+2017 February 27th - Version 4.0
+
+	- new demo content:
+		- Enfold 2017	
+	
+	- style.css - new version number
+	- folder css:
+		
+	- folder framework:
+		- added:  new header (transparent with border)
+		- fixed: an issue with the color picker throwing a css error
+		- fixed: a visual issue with the admin datepicker element
+		- updated: deprecated jquery methods that caused console warnings
+
+
+	- folder config-templatebuilder:
+		- added: full width tab section element
+		- added: full height grid column
+		- added: editor element live preview
+		- added: section and grid row id is visible in the builder canvas for easier distinction
+		- added: section and grid row content can be toggled to be invisible in backend for better overview
+		- added: section, column and cells display background images in the canvas
+		- added: section, column and cells display custom background colors as a small dot beside the name
+		- added: a new style for the iconbox icon
+		- added: a new style for progress bars
+		- added: a new style for testimonial grids
+		- added: new global blog style "modern business"
+		- added: google map 2 finger gestures implemented
+		
+		- fixed: issue with multiline rotator
+		- fixed: display issue with "clone last element button" in tabs
+		- fixed: display issue with social icons element
+		- fixed: an issue with the magic wand shortcode button in tinymce
+		- fixed: an issue with the fullheight grid not displaying properly
+		- fixed: a php comment that caused wordfence to think it found a security issue
+		- fixed: an issue with saving templates in the builder not working
+		- fixed: a bug with ajax portfolio display when the portfolio content was not wide enough
+		- fixed: a display bug with portfolio and masonry grids in conjunction with the "elegant" blog styling
+		- fixed: display of title custom color for iconlist if a link is set for the title
+		- fixed: an issue with double background color declaration on sections
+		- fixed: an issue with masonry background color, being visible behind the image
+		- fixed: a display issue with diagonal borders and background image color overlays
+		- fixed: an issue with pricing tables and currency colors on dark background
+		- fixed: several small display issue with the elegant blog layout
+		- fixed: an issue with the countdown timer not counting properly if no seconds are shown
+		- fixed: a display issue with the headline rotator when set to multiline
+		- fixed: a few styling issues with the pricing table
+		- fixed: issue with lightbox not closing properly on mobile devices
+		- fixed: an issue with template builder elements id sanitisation being too thorough
+		- fixed: a few minor php 7 and 7.1 related warnings
+		- fixed: some h3 markup is no longer rendered if the title field for the element is left empty
+		- fixed: an issue with invalid nested markup when a section color overlay was used
+		- fixed: an issue with the table shortcode not displaying zeros in the backend
+		- fixed: line breaks in masonry description working again
+		- fixed: an issue with anchor scrolling on mobile devices when left sidebar main menu was active
+		- fixed: an issue with anchor scrolling when the menu was set to disaply above the logo
+		- fixed: an issue with submenu elements and fixed frame settings
+		- fixed: an issue with submenus not working properly on phones
+		- fixed: an issue with image markup validation
+		
+		- improved: animation handling when a lot of animations are fired on page load, due to the user having scrolled down
+		- improved: iconbox display on tablets
+		- improved: image lightbox preloader styled to fit the theme
+		- improved: masonry "load next" preloader styled to fit the theme
+		- improved: some css font size declarations
+		- improved: styling of portfolio element
+		- improved: content tab font size adapts to the general font size now
+		- improved: header bar title markup no longer rendered when title is empty
+
+		
+	- folder config-woocommerce:
+		- fixed: woocommerce ajax add to cart button not working properly
+		
+		
+	- folder config-layerslider:
+		updated to the latest version
+	
+
+2017 February 1st - Version 3.8.5
+
+	- removed a php comment that caused a false positive alert message with the Wordfence Security Plugin. 
+
+2016 December 13th - Version 3.8.4
+
+	- fixed an issue with the layout editor not working, due to a fatal error on php 7.1 servers
+
+2016 December 13th - Version 3.8.3
+
+	- fixed an issue caused by the improved security were template snippets were not loading properly
+
+2016 December 12th - Version 3.8.2
+
+	This is mostly a compatibility and bugfix release that ensures that the theme works fine with:
+	- WordPress version 4.7
+	- The latest version of the google Maps API
+	- improves security for several ajax functions and also for the font uploader
+	- also adds small Bugfixes
+
+
+	- folder css:
+		- fixed: an issue with read more button of elegant blog entries
+		- fixed: an issue with woocommerce product thumbnail alignment
+		- improved: table element display on mobile devices
+		- updated: RTL file with a few bugfixes
+	
+	
+	- folder framework:
+		- improved: facebook likebox now uses user selected language
+	
+	- folder config-templatebuilder:
+		- added: option for grid cells to set height to 100%, 75%. 50% and 25% instead of the previous px based values only
+		- added: option for the fullwidth slider to set a minimum height for smaller devices
+		- added: new google fonts
+		- fixed: an issue with masonry excerpts containing HTML tags
+
+	- folder lang:
+		- fixed: an issue of using the correct language style in german (informal by default, formal only when selected)
+
+
+2016 September 12th - Version 3.8.1
+
+
+	- folder framework:
+		- fixed:a small issue with styling of WPML dropdowns in the backend
+
+
+
+2016 September 12th - Version 3.8
+	- new demo content:
+		- Medical demo
+		- Light Portfolio demo
+
+	- style.css - new version number
+	- folder css:
+		- added: new Menu style: the 'burger icon' menu
+		
+	- folder framework:
+		- added: new modern styling for the theme options backend, which supports retina screens and is also responsive 
+		- added: custom icons for enfold and portfolio item in main menu
+		- added: new options to the advanced styling generator for "body" and "p" tags
+		- added: advanced styling option for the new main menu style (burger menu)
+		- fixed: an issue with the menu manager, caused by deprecated menu items
+		
+		
+	
+	- folder config-templatebuilder:
+		- added: option to end a section with a slanted border
+		- added: option to clone the last element of a group (eg: clone the last single slide of a slider, a catalogue item or an iconlist)
+		- added: option to change the Fullscreen Slideshow background to scroll/fix/parallax
+		- added: new google fonts
+		- improved: google maps api key handling and error messages, as well as update of the documentation on the topic
+		- fixed: a bug with meta box sorting when on the edit page screen
+		- fixed: a bug with the animated countdown element not showing the correct date
+		- fixed: a display bug with the animated countdown element on firefox
+		- fixed: a display issue with the caption of non linking masonry elements
+		- fixed: a positioning issue of the fixed fullwidth menu element when using the "fixed frame" layout option
+		- fixed: an issue were long links were truncated in excerpts
+		- fixed: an issue with mailchimp world list dropdown menus not displaying
+		- fixed: an issue with the headline rotator not displaying correctly when multiline was active
+		
+		
+	- folder config-woocommerce:
+		- fixed: a bug with the display of the WooCommerce product review form
+
+
+2016 August 6th - Version 3.7.1
+
+	- style.css - new version number
+	- folder config-woocommerce:
+		- fixed: styling for the new tabbed front end account
+
+2016 August 6th - Version 3.7
+
+	This is a "no-thrills" compatibility and bugfix release that ensures that the theme works fine with:
+	- the upcoming version of WordPress 4.6
+	- WooCommerce 2.6
+	- WPML 3.4.1.1
+	- The new google Maps API
+	- the Instagram API
+	- the Facebook SDK version 2.7
+	- also adds small Bugfixes
+	
+	New demos and features will be added to version 3.8 which will be released soon ;)
+	
+	Folders & Files to update:
+		- lang
+		- framework/php
+		- css
+		- js
+		- config-woocommerce
+		- config-wpml
+		- config-templatebuilder
+		- functions-enfold.php
+	
+
+
+2016 June 6th - Version 3.6.1
+
+	- style.css - new version number
+	- folder lang: re exported all po/mo files which should fix some issues with the language files
+	- folder config-templatebuilder: 
+		- added: a php check that can prevent a critical error when updating was not done properly and the server still loaded older files
+	    - improved: table element now allows for more than 13 columns
+		- fixed: a javascript bug with woocommerce
+		
+		
+
+2016 June 6th - Version 3.6
+	
+	- new demo content:
+		- APP demo
+		- GYM demo
+		- Health demo
+
+
+	- style.css - new version number
+	- header.php - added some necessary css classes
+	- functions-enfold.php - fixed: a few errors generated in conjunction with WP-CLI
+	- functions.php - switched to the default wordpress title tag generator recommended in https://codex.wordpress.org/Title_Tag#
+
+	- folder framework: 
+		- added: new predefined styling “white-black” (Used in Gym Demo)
+		- improved: iconfont uploader is now able to use packs from http://www.flaticon.com/packs
+		- improved: iconfont uploader is now able to import custom icons from demos
+		- improved: iconfont uploader now is able to apply user defined custom names to the fonts. simply name the zip file: “iconset.YOURNAME.zip” - replace YOURNAME with a name of your choice
+		- improved: demo import script now includes iconfont files
+		- improved: favicon is now also displayed in the backend of your theme
+		- improved: changed a few files that generated false positives in some security plugins
+		- improved: improved the form generator mail sending logic
+		- improved: performance of the dynamic style generator
+		- fixed: a translation issue with contact forms
+
+	- folder config-templatebuilder:
+		- added: the ability to hide columns and cells on mobile devices
+		- added: background color option for masonry elements
+		- added: new coloring/saturation option for the google maps element: “Full color fill”
+		- added: new minimal styling option for the data table element
+		- improved: icon element color selector allows rgba colors now
+		- fixed: an issue that truncated links that contain multiple commas
+		- fixed: an issue with template builder sections that no longer worked after deleting a column inside
+		- updated: google maps API to the latest version
+	
+	- folder includes: 
+		- added: new default styling “White Black”	
+		- added: new styling options for “<mark>” and “<u>” element that lets you spice up a sites typography considerably
+		- added: new google fonts
+		- added: new css classes to the header generator
+		- fixed: the wedding demo import file caused a non editable issue on some servers	
+		- fixed: an issue with the markup helper for blog that wasn't properly deactivated 	
+		- fixed: a pagination issue with the blog element when set to grid and an offset was applied
+		- fixed: a minimum width issues with the facebook widget
+		- fixed: an issue with the construction demo content on mobile devices
+		- fixed: removed the "portrait" and "landscape" that are used to controll masonry display tag from interacting with related posts
+		
+	- folder lang: 
+		- updated: several language files and added a first version of hungarian
+
+	- folder js: 
+		- fixed: an issue with Instagram widgets and wrong lightbox groups	
+		- fixed: an issue with the page preloader not working properly when safari back button is used
+		- improved: up/down sliding with a more dynamic transition	
+
+	- folder css: 
+		- fixed: enfold date picker styling when woocommerce bookings is active	
+		- fixed: alignment of multiple slideshow buttons on mobile 	
+		- fixed: alignment of form fields on mobile	
+		- fixed: space between partner elements on mobile devices	
+		- fixed: an issue with testimonials stopping after they are clicked on a mobile device	
+		- fixed: a few z-index issues with the fullwidth menu element
+		- improved: caption styling of easy slider	
+		- added base styling for the <mark> and <u> (underline) element	
+
+	- folder config-layerslider:
+		- updated: layerslider to the latest version (5.6.8)
+		
+	- folder config-woocommerce:
+		- fixed: an issue with disabled buttons not receiving the correct styling
+
+
+
+2016 April 26th - Version 3.5.4
+	- style.css - new version number
+	- folder css: fixed a minor css issues with main menu sidebar layouts
+	- folder lang: updates several language files
+	- folder js: fixed some issues with main menu highlighting
+
+	- folder config-templatebuilder:
+		- added: option to display excerpt in feature image slider
+
+
+2016 April 14th - Version 3.5.3
+	- style.css - new version number
+	- folder config-layerslider: updated Layerslider to the latest version
+	- folder framework: improved security in the theme framework. although compromise is unlikely upgrading is highly recommended!
+
+
+
+2016 April 12th - Version 3.5.2
+	- style.css - new version number
+	- js/avia.js - wordpress 4.5 compatibility fix
+	- folder framework: fixed a php notice caused by a deprecated script
+
+
+
+2016 March 22th - Version 3.5.1
+
+	- style.css - new version number
+	- shortcode.css - solved an issue with windows phones and parallax/fixed backgrounds
+
+2016 March 18th - Version 3.5
+
+	- new demo content:
+		- Hotel demo
+		- Spa demo
+		- Travel demo
+		- Consultant demo
+		- Résumé demo
+
+	- style.css - new version number
+	- functions-enfold.php - several small improvements to generated css styles
+	- header.php - added a new filter function
+	- index.php + other default template files: abort script if directly loaded in the browser to prevent crawling errors
+	- page.php - fixed a thumbnail size bug
+	
+	- folder css:
+		- fixed: a css error that was caused by setting a column background to "stretch fullwidth"
+		- fixed: a slideshow bug that caused buttons to slide in when they should fade
+		- fixed: a display issue with iconbox titles and some specific fonts
+		- fixed: an issue with some default css font sizes not adapting properly on smaller screens
+		- fixed: an issue with slideshow captions on small devices when 
+		- fixed: an issue with blank pages not aligning properly on mobile devices 
+		- fixed: an issue with color section background colors not being applied to Left Sidebar Layouts
+		- fixed: an issue with transparent headers and custom menu colours
+		- fixed: an issue with mobile menu display on tablets
+		
+		
+	- folder config-templatebuilder:
+		- added: background images for sections, cells and columns can now be set to "scale to fit" so the whole background image is always visible
+		- added: font size selection for accordion slider
+		- added: option to center accordion text
+		- added: new styling option for masonry and masonry gallery element: caption overlay
+		- fixed: issue with accordion slider php notice
+		- fixed: a problem with product grid item count
+		- fixed: a display bug with the Fullwidth Easy slider that was caused by choosing original image size
+		- fixed: a pagination bug with the woocommerce grid element
+		- fixed: an issue that prevented mailchimp to fetch more than 10 lists
+		- fixed: an issue that prevented some servers from connecting with mailchimp
+		- fixed: an issue with html elements added to the table element
+		- fixed: an issue with the class of the events calendar upcoming events heading
+		- fixed: an issue with the feature image slider not accepting disabled autorotation
+		- fixed: an issue with the magazine element throwing a php error on subpages
+		- improved: masonry filter display when loading new elements via "load more" button
+		- added: various title filters
+		
+
+	- folder framework:
+		- added: new filter for framework related css body classes
+		- added: new google fonts
+		- improved: some google fonts now come with more weights
+		- improved: dynamic styling generator accepts array values now
+		- fixed: an error with form success message 
+		- fixed: an issue with contact form dropdowns when the "hide label" option was selected
+		- fixed: an issue with the import script not working properly with PHP7 and dropping the demo menu
+		- fixed: an issue with the contact form autoresponder not working when more than one mail address is added
+		- fixed: an issue with google author and publisher rel tag
+		- fixed: a multi language issue with the facebook plugin and wpml
+		
+	- folder config-woocommerce:	
+		- added: new product style: minimal overlay
+		- added: support and styling for woocommerce bookings
+		- fixed: a css notice in the backend when woocommerce is active
+		- fixed: an issue with the woocommerce quantity selector
+		- fixed: an issue with the dark default themes
+		
+	- folder js:
+		- fixed: an issue with sidebar main menu sticky calculation
+		- fixed: a problem with google map tooltips
+		- fixed: an issue with the feature image slider not working in Firefox
+		- fixed: a syntax error in the autorotation setting of the slideshow
+	
+	- folder includes:
+		- added: new design - bright blue
+		- added: new layout feature. Instead of stretched and boxed you can now chose "framed" which displays a fixed frame around the site
+		- added: new advanced styling element to customise: Slideshow Titles
+		- added: new advanced styling element to customise: Slideshow Captions
+		- fixed: a bug with the wedding demo that prevented correct image import
+		- fixed: missing translation strings in Portfolio.
+		- fixed: the advanced styling selector of main menu hover items when the logo is displayed above the menu
+		- improved: automated schema.org markup for blog posts.
+	
+	- folder config-layerslider:
+		- fixed: an issue with a javascript file not being loaded properly
+		- updated: layerslider to the latest version (5.6.3)
+		
+	
+	- folder config-wpml:
+		- added: an XML file for languages, available for the facebook page widget
+		- fixed: an issue with php notices caused by the grid layout
+	
+	- folder lang:
+		- updated several translation files
+		
+		
+	
+2015 December 18th - Version 3.4.7
+
+	- style.css - new version number
+	- folder config-templatebuilder:
+		- improved: how the template builder template gets loaded in frontend to improve plugin compatibility
+		- fixed: a bug with categories not displaying for various template builder elements
+
+	- folder framework:
+		- fixed: renamed classed to remove a few php 7 notices
+		- fixed: an issue with the contact form not validating select elements properly
+		- fixed: an issue with blog pagination not working properly due to changes in WordPress 4.4
+		- fixed: an issue that prevented deleting custom sidebars on the widget page
+
+	- folder config-events-calendar:
+		- fixed: a few styling issues and a php notice with version 4 of the events calendar
+		
+	- folder js:
+		- fixed: a jquery bug with the lightbox not working on ajax generated elements
+
+
+	- folder config-layerslider:
+		- updated: the layerslider was updated to the latest version
+
+2015 December 8th - Version 3.4.6
+
+	- style.css - new version number
+	- folder config-templatebuilder:
+		- improved: how the template builder template gets loaded in frontend to improve plugin compatibility
+		- fixed: a bug with categories not displaying for various template builder elements
+
+
+2015 December 7th - Version 3.4.5
+
+	- style.css - new version number
+	- folder config-templatebuilder:
+		- updates to the google maps API and elements
+
+	- folder framework:
+		- fixed: a bug with the contact form builder 
+		- improved: theme update script
+		- fixed: a but with the contact form builder when using key/values pairs for select elements
+		
+	- folder config-templatebuilder:
+		- fixed: a problem with php7 and template builder slideshow elements
+		- updated: google maps api calls
+
+	- folder includes:
+		- removed several older 3rd party scripts
+
+	- folder js:
+		- fixed an error with the lightbox not working on ajax portfolio items
+		
+
+2015 November 17th - Version 3.4.4
+
+	- style.css - new version number
+	- folder config-templatebuilder:
+		- fixed a bug caused by the compatibility release for php7 that occurs on  older php 5.2.X installations
+	
+	
+	
+2015 November 17th - Version 3.4.3
+
+
+	- style.css - new version number
+	- folder framework:
+		- fixed: a few issues with php7
+
+	- folder includes:
+		- fixed an issue with the minimal portfolio demo import
+
+
+
+2015 November 12th - Version 3.4.2
+
+	- style.css - new version number
+	- css/layout.css - fixed a display issue with the instagram widget on firefox	
+	
+	- folder js:
+		- fixed: a bug that caused sliders to stop after the first rotation
+
+	- folder framework:
+		- improved: contact form date picker now comes with dropdown menu for month and year
+
+	- folder config-templatebuilder:
+		- fixed: a problem with the mailchimp element causing too many queries to the API. This affected site performance even if the mailchimp element was not used at all
+
+
+2015 November 5th - Version 3.4.1
+
+	- style.css - new version number
+
+	- folder framework:
+		- fixed: a fatal error caused the instagram widget on certain servers
+
+	- folder config-templatebuilder:
+		- fixed: a problem with the masonry not accepting custom css classes
+
+
+2015 November 5th - Version 3.4
+
+	- new demo content:
+		- minimal portfolio
+		- construction demo
+		- lifestyle blog
+		- landing page demo
+		
+	- style.css - new version number
+	- archive.php - fixed a display bug with archive description if no description was added
+	- functions.php - activate new widgets
+	- functions-enfold.php - added a new header styling with menu above centered logo
+	- header.php - structural improvements
+	- template-builder.php - fixed a css class error
+
+	- folder css: 
+		- added new blog styling: "Elegant"
+		- added styling for new template builder elements
+		- improved: styling of the response when a mailchimp or contact form is sent
+		- fixed: a css bug where iOS9 replaced an arrow with an emoji
+		- fixed: a css bug with lightbox caption size
+		- fixed: a layout issue with elements inside sections that where set to minimum height
+		- fixed: a bug with menu items that occurs with right aligned logos
+		- fixed: a flickering issue with fullwidth buttons on safari
+		- fixed: a flickering issue with the fullwidth slider in ie11
+
+	- folder framework: 
+		- added: a Instagram gallery widget
+		- added: a Mailchimp signup widget
+		- updated: to the latest version
+		- updated: the facebook page widget was replaced with the newer responsive page plugin
+		- fixed: a bug with advanced layout options and font selection
+		- fixed: an issue with very long similar labels of contact form elements causing the contact form to send the same value twice
+		- improved: contact form generator flexibility
+		- improved: contact form validation of numbers
+		
+	- folder js: 
+		- added: javascript rules for the new header styling
+		- fixed: an issue with safari that caused various elements to no longer work when you switch tabs (slider testimonial)
+		- fixed: a bug that caused the slideshows within the ajax portfolio not to work
+		- fixed: a bug that set the mega menu position wrong after resizing a browser window
+		- fixed: a bug that messed up lightbox grouping on pages with ajax elements (eg: masonry)		
+		
+	- folder includes:
+		- added: option for the linked image overlay to remove the icon at „advanced styling options“ for a minimal look
+		- added: option for the linked image overlay to remove the overlay completely
+		- added: option to lock the advanced layout editor for non-admins to prevent accidental layout changes
+		- added: new default styling “minimal white”
+		- added: new default styling “boxed minimal”
+		- added: new default styling “blue-yellow”
+		- added: sidebar separator styling
+		- added: global option for advanced styling tab that lets you configure border radius of buttons
+		- added: global option for advanced styling tab that lets you configure styling of widget titles
+		- added: a new Enfold Tab for entering the mailchimp API key
+		- added: a few trending google fonts
+		- improved: loop-index.php and loop-author.php has a slightly different layout when the new blog style "Elegant" is used
+
+	- folder config-templatebuilder:
+		- added: new Template builder element: Featured Image Slider for Posts
+		- added: new Template builder element: Mailchimp Signup Form Generator
+		- added: new styling for blog and grid element
+		- added: new animations for images
+		- added: columns shortcode now allows various animations when displayed first on the screen
+		- added: blog element option that allows you to remove the element on sub pages (/page/2/, /page/3/ etc)
+		- fixed: a bug with the masonry loading duplicate entries when set to random
+		- fixed: an issue with the accordion slider and default lightbox linking
+		- fixed: wrong display of mobile data table headings
+		- fixed: an incompatibility with the plugin "woocommerce tabs manager"
+		- fixed: a bug that caused animated numbers to animate more than once
+		- fixed: changed some backend css class names to prevent incompatibilities with other plugins (eg: debug)
+		- fixed: an issue with the contact form not displaying the success message when a decimal number was entered
+		- fixed: a nesting error for menu element a tags
+		- improved: the description text of the Headline rotator element
+		- improved: you can now save single elements as template builder "templates" for easier re-use (previously only possible for the whole page)
+		- improved: deactivated catalogue items are marked red now in your backend for easier detection
+		- improved: contact form element in backend 
+		- improved: changed parallax html structure in preparation for future updates and improvements
+		- improved: the way metaboxes in the backend are stored
+		
+	- folder config-woocommerce:
+		- fixed: woocommerce styling of "order again" button
+		- fixed: woocommerce styling of login form
+		- fixed: a bug with woocommerce cart not displaying correctly on boxed layouts
+		- fixed: a bug with woocommerce items in cart inheriting a wrong height and line height
+	
+	- folder config-events-calendar:
+		- fixed: display bug with recurring events when using a template builder element
+		- fixed: a display bug with the event map on single pages
+		- updated: tribe events calendar integration. (updating to the latest events calendar version might be necessary)
+	
+	
+	- folder lang:
+		- updated: NL translation files
+	
+
+2015 August 24th - Version 3.3.2
+
+	- style.css  - new version number
+	- folder config-templatebuilder: fixed an issue with the visual editor adding unnecessary html characters and tags
+
+
+
+2015 August 20nd - Version 3.3.1
+
+	- style.css  - new version number
+	- folder framework: fixed an issue with portfolio and latest news widget
+
+
+
+
+2015 August 19nd - Version 3.3 - BUGFIX AND COMPATIBILITY RELEASE	
+	
+	- style.css  - new version number
+	- folder framework:
+		- files were updated to work with WordPress 4.3: This will remove some PHP Errors and layout problems caused by the customizer
+
+	- folder css:
+		- several small bugfixes and improvements for template builder elements
+		- fixed a layout problem with WooCommerce
+		- fixed display of large gap masonry when inside color section or column
+		- fixed display of no sidebar blog font size if a different standard font size was chosen
+
+	- folder js:
+		- fixed a problem with smooth scrolling
+		- fixed a problem with minimum height calculations
+	
+	- folder includes:
+		- improvement of some of the demo files
+		- fixed a problem with the advanced styling editor
+		- fixed a problem with the admin bar menu
+	
+	- folder config-templatebuilder:
+		- small php improvement to the masonry element
+		- fixed a rare nesting error with color sections
+	
+	- folder config-layerslider:
+		- updated the layerslider to the latest version
+		
+
+2015 June 25nd - Version 3.2.3
+	- style.css  - new version number
+
+	- folder config-templatebuilder:
+		- fixed an issue with the submenu elements id
+
+	- folder includes:
+		- fixed an issue with auto linking of posts with post type link
+
+
+
+
+2015 June 25nd - Version 3.2.2
+	- style.css  - new version number
+	- documentation folder was updated with new assets
+
+2015 June 15nd - Version 3.2.1
+	- style.css  - new version number
+	- folder includes:
+		- added rel=‘nofollow’ to comment links
+
+	- folder config-templatebuilder:
+		- fixed an image size problem with portfolio gallery thumbnails	
+
+	- folder js:
+		- improved: the visual site preloader works faster now
+		- updated: Vimeo API to fix autoplay
+
+
+
+2015 June 2nd - Version 3.2
+	- style.css  - new version number
+	- functions-enfold.php - added new main menu filter functions
+
+	- new demo content:
+		- wedding demo
+		- church demo
+	
+	- folder framework: 
+		- updated: to the latest version
+		- added: new advanced font options for headings (font weight / text transform) in advanced styling editor
+		- fixed: image upload glitch affecting older themes
+		
+	- folder config-templatebuilder:
+		- added: columns now got styling options like background color, image, padding, margin
+		- added: colorpicker now allows to the use of RGBA (transparent) colors
+		- added: new element: events countdown
+		- added: option to center form text
+		- added: linktarget option for hotspot links
+		- added: Audio Posts now also display the audio preview in grid mode
+		- added: Gallery elements allows to display only the first image of the gallery and the other images are accessible via lightbox
+		- improved: default countdown element
+		- improved: events calendar stylings
+		- improved: styling for the big testimonial slider on mobile devices
+		- fixed: an issue with masonry excerpts displaying shortcodes
+		- fixed: a bug that caused the template builder to disrupt WPML ajax translations
+		- fixed: a bug with the animated number element if a decimal with a zero was used (eg: 0.007)
+	
+	- folder css:
+		shortcode.css: added cpolumn stylings
+		layout.css: fixed an issue with the fallback main menu on mobile devices
+	
+	
+	- folder includes:
+		- updated: backend option pages	
+		- added: minimal header with drop shadow	
+		- added: main menu filter hook	
+		- added: 2 new color schemes	
+		- fixed: schema markup for posts	
+	
+	- folder config-events-calendar:
+		- improved: calendar element colors
+		
+	- folder config-woocommerce:
+		- fixed: big with checkout display on mobile
+
+	- folder config-layerslider:
+		- updated: to the latest version
+		- fixed: a problem with the latest version and the previous enfold config script
+	
+		
+	
+2015 April 30th - Version 3.1.5
+	- style.css  - new version number
+	- includes/helper-responsive-megamenu.php - fixed an error that caused the site to crash when "Automated Schema.org HTML Markup" was disabled in the backend
+
+2015 April 30th - Version 3.1.4
+	- style.css  - new version number
+	-template-builder.php - fixed an issue with the template displaying the wrong sidebar
+
+	- folder js:
+		-fixed: excluded dropbox links from lightbox autolinking
+		-fixed: issue with main menu active link not being highlighted on one page portfolio
+		
+		
+	- folder css:
+		grid.css: fixed an issue with the mobile menu not being scrollable 
+		shortcode.css: fixed an issue with the slideshow dots not appearing
+		
+		
+	- folder framework: 
+		- improved: security of the framework against XSS attacks
+		- improved: minor improvements to the frameworks sidebar management
+		- updated: TGM Plugin activation class to version 2.4.1
+		- fixed: an issue with special characters in google maps widget
+		- fixed: an issue with the combo widget displaying action schedules
+	
+	- folder includes:
+		- fixed: sidebar widget id settings. it might be necessary to re-apply your widgets to the correct widget area after updating
+		- fixed: a problem with mega menu titles displaying then they shouldn't
+		- fixed: an issue with menu items and schema markup
+	
+	
+	- folder config-woocommerce:
+		- fixed: an issue with a read more button in grouped products
+		- fixed: an issue with title/breadcrumb not using the global display settings 
+		- improved: the style of layered navigation filters
+	
+	- folder lang:
+		- updated: danish translation file
+
+	- folder config-templatebuilder:
+		- fixed: an issue with the comment element not using global settings
+		- fixed: an issue with section overlays causing a HTML nesting error in the footer
+	
+		
+
+
+2015 March 29th - Version 3.1.3
+	- style.css  - new version number
+	- sidebar.php - added new hook to add data to dummy widgets	
+	- search.php - added new hook for easier search page modifications
+	- js/shortcode.js - fixed two small issue with the contact form redirect feature
+	- css/shortcode.css - fixed an issue with safari circle images
+	- css/layout.css - improved layout for fullwidth author blog archives
+
+
+
+	- folder config-templatebuilder:	
+		- added: each masonry now has a unique id
+		- fixed: an issue with hotspots tooltips generating unexpected paragraphs
+		- fixed: EasySlider description for links
+	
+
+2015 March 24th - Version 3.1.2
+	- style.css  - new version number
+	- js/avia-compat.js - fixed an issue with parallax sections on mobile
+	
+
+- folder config-woocommerce:
+	- fixed an issue with a php notice if settings were not saved after update
+
+- folder framework:
+	- some security improvements
+	- improved html escaping for google maps widget
+	- improved the new "text as placeholder" feature for contact forms
+	- fixed an issue with breadcrumb navigation and schema validation
+
+- folder config-templatebuilder:
+		- fixed an issue with hotspot images adding empty paragraph markup to the tooltip
+
+
+
+2015 March 18th - Version 3.1.1
+	- style.css  - new version number
+	- functions-enfold.php - fixed an issue with submenu item height when a custom menu height was set
+	- js/avia.js - fixed an issue with the new unsticky top bar not working on non-shrinking headers
+	
+	- folder config-templatebuilder:	
+		- the select element for taxonomies shows the parent/child relation of the taxonomy now
+		
+	- folder config-woocommerce:
+		- fixed a minor issue with the new shopping cart icon and its borders 
+	
+
+2015 March 12th - Version 3.1
+	- style.css  - new version number
+	- functions.php - added image size filter
+
+	- new demo content:
+		- startup demo
+		- shop demo
+		- one page portfolio demo
+	
+	- folder framework: 
+		added: visual page preloader option 
+		added: smooth page transition option
+		added: unsticky top bar option
+		added: shop options page
+		added: shopping cart display options
+		added: shop overview display options
+		added: color options for all sections: heading color and secondary font color can now be easily changed in general styling options
+		added: contact form option to remove default form labels and display the element name as placeholder
+		added: 3 new predefined color scheme, used in our new demos
+		added: new minimal header option (no borders, active item indicators, no transparency)
+		added: option to pick the default font size for the theme in enfold->general styling
+		fixed: a bug with the google map widget when single quotes were used in the description
+		fixed: a validation error with multiple active google fonts
+		fixed: uploading and inserting of .ico files for favicon
+		updated: color palette in color picker reflects theme colors
+		improved: compatibility with php 5.6
+		improved: demo import can now require a plugin before importing
+		improved: demo import now properly imports secondary menus and sets menu locations correctly
+		improved: demo import now disables and renames previously created menus so no menu conflicts arise
+		
+	- folder config-templatebuilder:	
+		added: new element: Rotating Headline
+		added: section background color and pattern overlays
+		added: fullscreen and fullwidth slider pattern and overlay
+		added: single product pages now support template builder
+		added: 5 new elements available on single products (Purchase Button, Product Reviews, Product Tabs, Product Information, Related Products)
+		added: new social sharing buttons template builder element
+		added: template builder can now be used on single post entries
+		added: scroll down button for sections (similar to fullscreenslider)
+		added: new padding option to section (huge padding)
+		added: tooltip styling option with drop shadow
+		added: tooltip option to display tooltips permanently
+		added: the option to create simple submenus directly within the template builder submenu element
+		added: contact forms "select" element can be changed to a multi-select element now
+		added: new minimal styling options to the pricing table 
+		added: new styling options for image shortcode (color options for overlay, hover effects)
+		added: image element caption styling
+		added: filter hook for postslider excerpt
+		fixed: a problem with feeds not displaying correctly when on a template builder page
+		fixed: a problem with gallery and ajax portfolio overwriting the column settings for each other
+		fixed: a problem with the hotspot element messing up the layout when no image is set
+		
+	- folder includes:
+		added: the option to only display breadcumb in title bar
+		fixed: an issue with empty search queries on sub pages
+		fixed: a problem with the schema.org date markup of postslider elements
+		fixed: a blog gallery problem, not accepting the correct thumbnail size
+		updated: backend option pages
+	
+	- folder lang:
+		added:   added persian language files, 
+		updated: russian translation file
+		updated: spanish translation file
+		updated: dutch translation file
+		updated: all language files (removed fuzzy strings from translations)
+		updated: korean and arabic file names are updated to match wordpress standards
+	
+	- fodler js:
+		fixed: parallax section background jumping on pageload
+		improved: lightbox script grabs caption data from default wordpress gallery shortcode now
+		updated: waypoint script
+		
+	- folder css:
+		added: new header styles
+		fixed: a bug with the visible of the mobile menu
+		fixed: mobile logo padding bug
+		fixed: a but with overflowing "current menu indicator"
+		fixed: a bug with alternate logos for transparent headers not switching properly
+		fixed: several small css typos in front and backend
+		fixed: an issue with rtl slideshow controls
+		fixed: a display issue with 
+		improved: display of list items within icon list items
+
+	- folder config-woocommerce:
+		added: possibility to set a banner image for the shop page
+		added: alternate styling for category pages with the option to display a banner image and description 
+		added: new styling options for product overview pages (default, default without buttons, minimal)
+		fixed: a bug with selecting sidebar on shop page
+		fixed: a bug with wrong css image links
+
+	- folder config-gravityforms:
+		fixed: an issue with the latest version of gravityforms and the theme integration script
+
+	- folder config-events-calendar:
+		fixed: a problem with currencies not displaying correctly
+
+	- folder config-wpml:
+		fixed: a flag styling issue on mobile devices
+
+
+
+
+2015 January 28th - Version 3.0.8
+	- style.css  - new version number
+	- base.css  - fixed a background z-index issue
+	
+	- folder includes/admin:
+		- modified translation strings so they no longer contain HTML code that could mess up backend options if translated poorly
+	
+	- folder lang:
+		- regenerated several mo/po language files that caused problems after the latest update
+		- removed outdated translations
+		
+	- folder framework: 
+		update to the latest version +  some minor translation fixes
+
+
+
+2015 January 26th - Version 3.0.7
+	- style.css  - new version number
+	- layout.css + grid.css - solved a problem with fixed background images in the latest version of google chrome (40+)
+	
+
+2015 January 24th - Version 3.0.6
+	- style.css - new version number
+	- layout.css - fixed an alignment issue of the logo in sidebars
+
+	- folder config-templatebuilder:
+		- put options for color sections in tabs in preparation for next update with more options
+
+	- folder lang:
+		- regenerated several mo/po language files that caused problems after the latest update
+
+
+
+2015 January 19th - Version 3.0.5
+	- style.css - new version number
+	- includes/helper-responsive-megamenu.php - blog menu item gets highlighted on single post pages if a blog was selected in theme options
+	- functions.php - small improvements so theme translation works better
+	- folder framework: update to the latest version +  some security improvements
+	
+	- folder css:
+		- fixed: a bug with mobile menu when used with RTL settings
+		- fixed: a visual bug with the iconbox element when icon was set to display as a link
+		- fixed: a visual bug of the masonry element on mobile devices
+		- fixed: a visual bug with right aligned captions on fullscreen sliders
+		- fixed: a visual bug with video players displaying a "video player" label
+		- fixed: an error with post navigation when the a sidebar main menu was used
+		- fixed: a visual problem with the socket menu on mobile devices
+		- fixed: a small problem with the "active menu item" border below main menu items
+		- fixed: a small problem with phone number alignment in header top bar
+		- fixed: a gallery thumbnail bug in ajax portfolios
+
+	- folder config-templatebuilder:
+		- added: color options for the Promo Box (Font, Background, Border)
+		- added: order and sorting options for Portfolio and Masonry element
+		- added: various filters to disable the layout builder programmatically
+		- improved: font manager compatibility with SSL in wordpress backend
+		- fixed: a bug that showed the html editor instead of the visual editor when opening modal windows
+		- fixed: magazine titles now display the correct title attribute
+		- fixed: a small validation problem with custom HR Elements
+		- fixed: a problem with portfolio custom links
+	
+	- folder js:
+		- added: main menu items can open modal windows with an iframe if  ?iframe=true to is added to the link
+		- fixed: a problem with sidebar menus and fullscreen sliders
+		- fixed: an issue with animated numbers not displaying in IE8
+		- fixed: display of media element player interface 
+		- fixed: video looping in safari 8 
+		- fixed: a problem with mega menu column width calculation 
+		- improved: minor improvement to ajax portfolio behavior in parallax section
+		- improved: parallax offset calculation script
+	
+	- folder config-woocommerce:
+		- updated: the theme is now WooCommerce 2.3 ready
+		- added: proper compatibility mode with default Shop Page and Template Builder
+		- small SEO improvement on Single Product page by removing unnecessary (duplicate) h1 tag
+	
+	- folder config-layerslider:
+		- fixed: a problem with the demo slider import triggered repeatedly when using a child theme with a very long name
+		
+		
+	
+2014 November 20th - Version 3.0.4
+	- style.css - new version number
+	- fixed: button shortcode not working properly
+
+2014 November 20th - Version 3.0.3
+	- style.css - new version number
+	- css/layout.css - fixed an issue with main menu dropdowns when main menu is in sidebar
+	- css/shortcode.css - small styling improvements to various shortcodes, fixed an issue with cut off testimonial elements
+	- css/dynamic-css.php -  a few color improvements to various shortcodes
+	- includes/helper-social-media.php - fixed an encoding problem of the share links
+	- functions-enfold.php - the theme now uses the universal google tracking code for google analytics by default
+	
+	- folder framework: 
+		- improved: email form validation allows one letter names in email address eg: s@options.com
+		- fixed an issue with transparent underline of the main menu
+		
+	- folder config-templatebuilder: 
+		- added: additional options for the submenu element when on small devices
+		- added: added slideshow option to stop slideshow autorotation with the last slide
+		- fixed: shortcodes within the catalogue item now execute properly
+		- fixed: button links that contained a mail address
+		- fixed: an issue that prevented several elements from working properly in WordPress 4.0.1
+	
+	- folder config-wordpress-seo: 
+		- improved: backend compatibility with the template builder. The plugin should be able to check the content of the template builder with higher accuracy now
+		
+	- folder js:
+		- improved: several scripts
+		
+	- folder lang:
+		- added: hebrew translation file
+		
+	- folder config-events-calendar:
+		- improved: breadcrumb navigation when no events are found
+		
+	- folder config-woocommerce:
+		- added: loading animation when catalogue product is clicked
+		- improved: list styling in product description
+		- improved: small SEO improvements for single product page
+		
+	- folder config-layerslider: updated to Version 5.3.2
+
+2014 October 19th - Version 3.0.2
+
+	- style.css - new version number
+	- shortcode.css - small improvements to various shortcodes (iconlist, section), fixed a problem with custom colors for headings
+	- layout.css - fixed an issue with ie8 headers and with large logos overlapping the mobile menu
+	- shortcode.js - improved phone validation for contact forms
+	- avia.js - fixes a bug with mega menu alignment, as well as a bug with portfolio not executing the sorting callback
+	- index.php - fixed a problem with a blog filter
+	
+	- folder framework: 
+		- update: option pages now use the modern media uploader instead of the deprecated version
+		- fixed: a small issue with old media uploader and unexpected output
+	
+	- folder config-wordpress-seo: 
+		- removed some hooks that caused troubles when analyzing page content with WordPress SEO.
+	
+	- folder config-events-calendar:
+		- updated: enfold now runs best with version 3.8 + of the events calendar
+		- fixed: some minor style issues
+		- fixed: a problem with translation
+
+	- folder config-templatebuilder: 
+		- added: grid row accepts custom IDs so you can scroll to them via main menu links
+		- added: image hotspot link option
+		- fixed: small bug with the default link overlay not saving content if saved by hitting the enter key
+		- fixed: a bug that prevented the modal window in the backend to cause problems on Firefox
+		- fixed: a bug that caused a wrong drag and drop offset
+		- fixed: a few spelling errors
+		- fixed: alignment issue with image hotspots
+		- fixed: a problem with the menu element displaying the wrong menu
+		- fixed: an issue with flexible elements that can stretch to fullscreen when used in shortcode mode
+
+	folder lang:
+		- updated: Spanish translation file
+		
+	
+2014 October 7th - Version 3.0.1
+
+	- style.css - new version number
+	- tag.php - fixed a filter setting
+	- css/shortcode.css 
+		- fixed a small bug with the masonry
+		- fixed a small bug with positioning of submenu element
+	
+	- folder config-woocommerce: 
+		- fixed a few styling issues on mobile layouts
+		- better mobile view of cart icon
+	
+	- folder framework: 
+		- security improvements (thanks to Barak Tawily from AppSec Labs for the contribution)
+		- latest portfolio widget accepts custom portfolio links
+		- modified language strings for easier translation
+		- option to escape a coma in form builder
+		
+
+	- folder config-templatebuilder: 
+		- fixed: small bug with table headings on mobile devices
+		
+
+2014 October 1st - Version 3.0
+
+- style.css - new version number
+- functions-enfold.php - added: option to style main menu items like buttons
+- header.php - small changes
+- footer.php - option for social icons
+- inlcudes/loop-index.php - fixed a problem with wrong linking entries when post type link was used
+- includes/helper-social-media.php - fixed a few minor bugs with linkedin and twitter sharing
+
+- new demo content:
+	- flat business demo
+	- photography demo
+	- restaurant demo
+	- restaurant one page demo
+	- simple blog demo
+	- coming soon demo
+	
+
+- folder: config-events-calendar
+	- added: full support and styling for "The Events Calendar" and "The Events Calendar Pro" Plugin
+
+
+- folder includes/admin:
+	- added: option to change the sidebar width
+	- added: option to change content width and other dimensions
+	- added: option to display main menu as sidebar
+	- added: styling options for the new sidebar main menu
+	- added: option to hide blog tags
+	- added: multiple new google fonts
+
+
+- folder css:
+	- added: styles for new elements
+	- added: styles for button styled main menu item
+	- improved: revamped the grid system to be % based for more layout flexibility 
+	- improved: mobile grid is now fluid for better screen real estate usage
+	- improved: default wordpress audio playlist styling
+	- fixed: issue with transparent header and background images
+	- fixed: issue on firefox where hotspots within columns did not respect column size
+	- fixed: a problem with right aligned captions and blog images
+
+- folder config-templatebuilder:
+	- added: new Element: Layout Row (lets you create beautiful grid layouts)
+	- added: new Element: Catalogue for pricing lists
+	- added: new Element: Woocommerce Product List
+	- added: new Element: Fullwidth (sticky) submenu
+	- added: new Element: Countdown timer
+	- added: new Element: Fullwidth Button
+	- added: new Element: Upcoming Event List (The Event Calendar Plugin is necessary)
+	- added: new Header options: hide header until user scrolls down and hide header permanently on a single page
+	- added: slideshows can now use a "permanent caption" which does not change even if the active slide changes
+	- added: optional minimal styling for slideshow controls
+	- added: option to permanently hide slideshow controls	
+	- added: option for google maps element to set zoom to "auto" which will automatically set the zoom to show all markers
+	- added: option for section shortcode to display a stylish bottom arrow
+	- added: option for testimonial shortcode to display a larger testimonial slider
+	- added: filter so user can programmatically change the lightbox image size	
+	- added: progress bar option to disable continuos animation
+	- added: progress bar option to disable striped styling and enable flat one instead
+	- added: font color option for textblock element
+	- added: font color option for content slider element
+	- added: font color option for team member element
+	- added: font color option for testimonials
+	- added: font color option for contact forms
+	- added: font color and size option for fullwidth easy slideshow captions
+	- added: font color and size option for fullscreen slideshow captions
+	- added: font and icon color option for the iconbox element
+	- added: font and icon color option for the iconlist element
+	- added: new custom separator options that lets you configure color, width, top-margin, bottom-margin and icon
+	- added: columns option for masonry and masonry gallery
+	- added: option for portfolio and masonry to display currently active sort category as title
+	- improved: section minimum height can now be a custom pixel value
+	- improved: better grouping of element options in modal window by using tabs
+	- improved: better multi input element for margins and paddings
+	- improved: masonry styling
+	- improved: magazine received proper hatom markup	- fixed: an issue with Special Headings and double paddings
+	- fixed: a bug with invisible draggable elements of the layout builder when in fullscreen mode
+	- fixed: a problem with contact form email verification and new top level domains
+	- fixed: a problem with password protected pages that also use a transparent header
+	- fixed: a bug that accidentally transformed shortcodes with visual representation (gallery, audio, more tag) into html markup within your editor
+	- fixed: masonry and masonry gallery buttons appear in the shortcode creator now
+	- fixed: a bug that caused problems with multiple color picker elements in a single modal window
+	- fixed: a bug that prevented blank hotposts without numbers
+	- fixed: blog display options like author/category display are now applied to the blog template builder element
+
+
+- folder woocommerce:
+	- improved: css and javascript to work with the new woocommerce product list element
+	- improved: css and javascript to work with the new main menu options
+
+
+- folder framework:
+	- improved: changed dummy data import tab in backend to show images
+	- improved: dummy data import to allow different dummy files to be uploaded
+	- improved: dummy data import to also include widgets
+	- improved: dummy data import to include custom data like menu style and activated mega menu
+	- improved: after theme update dynamic stylesheet is automatically regenerated in case new theme options were added
+	- fixed: a bug with menu importing that caused the menus to ignore correct nesting
+	- fixed: a bug with stylings not being applied after demo content import
+
+- folder includes:
+	- added: various new layout options
+	- added: demo files
+
+- folder js:
+	- improved: lightbox. You can now open any page in an iframe modal window by appending "?iframe=true" to the link
+	- improved: smooth scroll logic for improved one page setups
+	- improved: if main menu is empty no mobile main menu toggle will be displayed on smartphones
+	- improved: validation check for contact forms
+	- improved: scroll performance
+	- fixed: a bug with hotspots not working in IE8
+	- fixed: a bug with ajax portfolio when a filter was active
+
+
+folder config-wpml:
+	- added: language switcher for the main menu when sidebar layout is active
+	- added: alt attribute to flags to prevent validation error
+
+folder lang:
+	- updated: German informal translation
+	- updated: French translation
+	- updated: Russian translation
+	- updated: Italian translation
+	- updated: Norwegian translation
+
+
+- folder config-layerslider: updated to Version 5.3.0
+
+
+2014 August 27th - Version 2.9.2
+
+- style.css - new version number
+- folder framework: updated to work with WordPress Version 4.0
+- folder config-layerslider: updated to Version 5.2.0
+
+
+2014 July 9th - Version 2.9.1
+
+- style.css - new version number
+- folder js: fixed a bug that prevented modern browser from using hardware accelerated animations
+
+
+2014 July 8th - Version 2.9
+
+- style.css - new version number
+- header.php - added option to disable lightbox
+
+
+- folder config-templatebuilder:
+	- added: new Element: Image with Hotspots
+	- added: new Header style: transparent glass
+	- improved: Portfolio Element can now be used as a fullwidth element as well (please note that it might be necessary to update some pages if you want to keep your current look by putting the portfolio into a 1/1 column element)
+	- fixed: an error with the codeblock element and shortcode execution
+	- fixed: a problem with Yoast Seo Plugin affecting portfolio and blog pagination
+	- fixed: a problem with Numbers shortcode re-populating the value of the textarea with the default value
+	- fixed: a bug with slideshow elements creating a messed up shortcode when multiple images where added at once
+	
+	
+- folder js:
+	- added: new lightbox based on magnificent popup script
+	- removed: old prettyPhoto Lightbox script
+	- updated tooltip script
+	- fixed: a contact form email verification problem with seldom used single letter domain email addresses
+
+- folder css:
+	- added: styles for new lightbox
+	- improved: styling for single column portfolio
+	- fixed: a problem with google map tooltips and dark layouts that use white text color
+	- updated: multiple styles for the new and updated template builder elements
+	
+- folder framework:
+	- fixed: a bug with the dummy data import not applying the correct menu
+
+- folder lang:
+	- german translation update
+	- italian translation update
+	- spanish translation update
+	- added: arabic translation files
+	- added: norsk translation files
+
+- folder config-woocommerce:
+	-fixed: a problem with product sort buttons on mobile devices
+	
+		
+	
+2014 May 28th - Version 2.8.1
+
+- style.css - new version number
+- css/shortcodes.css - fixed a small issue with image sizes in firefox
+- js/avia-compat.js - fixed a small issue with masonry animation in firefox
+
+
+2014 May 28th - Version 2.8
+- style.css - new version number
+- search.php - improved: compatibility with url rewrite rules
+- template-archives.php - fixed: a display bug when no blog posts are available
+
+
+- folder config-templatebuilder:
+	- added: new Element: Animated Numbers that count from 0 to whatever number you have entered
+	- added: Masonry and Masonry Gallery can be used on pages with sidebar now (previously only fullwidth)
+	- added: contact form allows comma separated list of receiving emails
+	- added: contact forms "email" form fields use the "email" html type on mobile devices, so the keyboard layout shows the @ sign by default
+	- added: contact form fields now can have a column width of 1/1, 1/2, 1/3, 1/4, 2/3 and 3/4
+	- added: contact form description fields were added so you can add headings and descriptions between elements
+	- added: contact form can now be redirected to a new page after send, so you can display custom messages and track conversion paths
+	- added: contact form now has a sending indicator as visual feedback for the user
+	- added: table editor now allows to move existing rows and columns when editing the table
+	- added: color section option to remove the top border manually for a "flat" look
+	- added: image element now got a caption option as well as improved animation
+	- fixed: a problem with widget element not displaying the correct value
+	- fixed: a problem with shortcode "magic wand" button causing a white text area
+	- fixed: a problem with iconfont uploader throwing an error when uploading a font
+	- fixed: a problem with the code block element and improper whitespace stripping
+
+
+- folder js:
+	- fixed: a bug with the ajax search on Windows Chrome
+	- fixed: a bug with youtube videos starting when they shouldn't
+	- improved: masonry layout script was updated so there should be less issues with misaligned masonry elements
+	- improved: contact form javascript
+	- improved: fly out menu for mobile devices
+
+- folder css:
+	- fixed: a small issue with the post slider image overlay
+	- fixed: an issue with images not resizing correctly when resized in the wordpress editor
+	- fixed: an problem with the cart icon not displaying on boxed layouts
+	- fixed: a problem with top padding when using the blank template
+	- added: form css classes for various columns
+	- added: form css classes for button while sending
+	- improved: print.css file
+	
+- folder includes:
+	- added: reddit icon for header social media icons
+	
+	
+		
+
+2014 May 2nd - Version 2.7.1
+
+- style.css - new version number
+- layout.css - fixed an issue with the lightbox tint effect, some minor widget issues and removed some padding from blank template
+- base.css - fixed an alignment issue with captioned images
+- functions-enfold.php - removed some outdated code
+
+- folder js:
+	- fixed: an issue with mobile menus not displaying correctly
+	- added: option for the google maps element to disable dragging of map on mobile devices
+	
+- folder includes:
+	- added: several hooks for all loop files
+	- added: option to deactivate schema.org markup
+	- added: magazine and transparent header pages to the demo content
+	- improved: social media share button encoding of urls
+	- improved: use section tags instead of div tags for sidebar widgets
+
+- folder config-templatebuilder:
+	- added: additional filter options and settings to the schema.org markup generator
+	- fixed: a problem with the in popup-texteditor showing the value from another texteditor
+	- fixed: a problem with text editor formating when in html view
+	- fixed: a problem with text editor not working in firefox
+	- fixed: a problem with the masonry "load more" option fetching the wrong entries
+	
+- folder config-bbpress:
+	- fixed: a styling problem with user pages
+	
+- folder config-woocommerce:
+	-added: styling for categories that display only subcategory items
+	-fixed: a styling problem with product shortcodes
+	
+- folder lang:
+	-added: Korean Language files
+	-added: Simplified & Traditional Chinese Language files	
+	
+
+
+2014 April 20th - Version 2.7
+
+- style.css - new version number
+- functions.php - added new thumbnail size for magazine element, added new iconfont keys
+- includes/helper-post-format.php - fixed an issue with link replacement in blog posts for post format link
+- includes/related-posts.php - improved to work better with print styling, added additional style
+- includes/helper-social-media.php - improved screen reader accessibility for social icons
+- includes/loop-index.php - added sharing links for various social networks
+- includes/comments.php - fixed a minor issue with password protected comments
+- footer.php - improved screen reader accessibility
+- functions-enfold.php - added option that allows disabling post feature image on single post
+
+- folder js:
+	- improved: offset calculation for smooth scrolling script on iOS
+	- added: magazine tab script to show different categories
+	- fixed: a problem with google maps when using the template builder element and a map widget
+	- fixed: a bug with parallax scrolling and modern IE versions
+	- fixed: a problem where self hosted video stopped background video when user pressed play
+	- fixed: mega menu positioning on left menu
+
+- folder css:
+	- added: styles for the new magazine element
+	- added: social icon style for the largest Russian social network "VK"	
+	- improved: styles for some framework widgets
+	- improved: print.css stylesheet
+	- improved: grid view for blog grid on mobile devices
+	- improved: styling of news combo widget
+	- improved: styling for self hosted audio and video player 
+	- fixed: issue with icon header alignment
+	- fixed: centering of icons, submenu and phone number on mobile devices
+	- fixed: bug with progress bar animation on firefox
+	- fixed: bug with social icon placement
+
+	
+- folder framework:
+	- added: facebook likebox widget
+	- added: customization wizard that allows to edit distinct elements
+	- added: option to disable the reset theme options button by adding: add_theme_support('avia_disable_reset_options'); to your child themes function.php file
+	- added: confirmation window when deleting a widget area to prevent accidental deletion
+	- improved: security of ajax functions
+	- improved: multiple google webfonts are now queried with a single API request instead of many
+	- fixed: google webfont display in admin area at enfold -> general stylings 
+	- fixed: a translation bug in form generator
+
+- folder includes/admin:
+	- added: 10 new google fonts
+	- added: config file for the new customization wizard
+	- added: new config options for blog layout (social icons, meta display options)
+	
+	
+- folder config-templatebuilder:
+	- added: accordion image and post slider
+	- added: magazine element
+	- added: code block element
+	- added: lightbox linking option for image element
+	- added: option to disable video autoplay for slideshows
+	- added: a 5 column option for portfolios
+	- added: 2/5, 3/5 and 4/5 column for template builder
+	- added: option filter to portfolio
+	- improved: iconfont uploader is now more reliable
+	- improved: iconfont now holds reddit, bitcoin, vk and a few more social network icons 
+	- improved: multiple linkpicker dropdowns possible in one element now
+	- improved: slideshows now use the more convenient linkpicker to apply links to buttons, instead of a text input field
+	- fixed: a color bug with dropcaps
+	- fixed: a bug that prevented custom classes from being saved
+	
+- folder lang:
+	- updated: german translation	
+	
+- folder config-bbpress:	
+	- fixed: wrong stylesheet inclusion
+	
+
+2014 April 16 - Version 2.6.4
+
+Fixed a small bug that prevents users from linking with the advanced layout builder
+
+Please update
+ - file: style.css
+ - folder: config-templatebuilder
+
+
+	
+2014 April 15 - Version 2.6.3
+
+This release ensures WordPress 3.9 compatibility and fixes a few small issues with the new TinyMce Editor
+
+Please update
+ - file: style.css
+ - folder: frameowrk
+ 
+ 	
+
+2014 March 18th - Version 2.6.2
+
+- style.css - new version number
+- functions.php - improved stylesheet order
+- functions-enfold.php - fixed a bug with phone number in header not displaying
+- includes/helper-main-menu.php - fixed a bug with WPML language switcher  
+- config-wpml/config.php - language switcher additions
+- config-woocommerce/config.php - fixed a problem with YOAST SEO PLugin
+- includes/helper-main-menu.php + includes/helper-resposnive-megamenu.php  - added extra classes to the main menu for easier targeting
+
+- folder js:
+	- improved: smooth scrolling script
+	- improved: google maps marker placement
+
+- folder css:
+	- fixed: issue with unclickable iOS links when using a section with fixed or parallax background
+	- fixed: a menu flyout positioning bug for left positioned main 
+	- fixed: display bug for related blog entries on mobile devices
+	- fixed: display bug with latest news widget on internet explorer 8
+	- fixed: display bug with special headings on iOS
+	- improved: changed default line height of layerslider elements so they match the backend
+	- improved: phone number display in header on mobile devices
+	- improved: alignment of scroll to next section button in fullscreen slider
+
+- folder lang:
+	- updated italian translation
+
+- folder framework:
+	- added: additional filter for the map widget
+	- fixed: a bug that accidentally removed slashes from option page input fields
+
+- folder config-templatebuilder:
+	- fixed: a problem with the google maps element messing up the page layout
+	
+	
+	
+
+2014 March 11th - Version 2.6.1
+- style.css - new version number
+- functions.php - fixed a problem with registering of child theme css file
+- functions-enfold.php - fixed a problem with transparent menus appearing on post search
+- js/avia.js - fixed an issue with mobile dropdown menus when mega menus were used
+- js/shortcode.js - fixed height calculation for fullscreen slideshow with transparent header
+- js/avia-compat.js - improved check for mobile devices
+- index.php + archive.php -fixed an image with feature image not displaying
+
+- folder css:
+	- bugfixes for mega menu
+	- fixed alignment of secondary header menu
+	- fixed a small bug with the new fullscreen-slider scroll button
+
+- folder framework:
+	- fixes regarding the css stylings applied by backend options
+
+- folder config-templatebuilder:
+	- fixed some styling issues
+	- fixed a problem with image dimensions
+	
+	
+	
+	
+
+2014 March 10th - Version 2.6
+--------------------------------
+What changed?
+
+We have added a new Header-Configurator which allows to combine various header options at will: Logo and Menu Position, transparency, fixed, shrinking, position of secondary menu, icons, phone number and more
+Enfold also comes with an RTL stylesheet as well as a Print stylesheet now
+We have added a fallback option for video on mobile devices which can't be controlled with javascript. You can now define a custom image to display instead of the video
+Also new is the new import/export tab which allows you to save the theme settings and import them on another installation
+The theme also comes with a brand new Google maps element now, which allows to display any number of maps with any number of markers
+
+Last but not least we improved the performance of the theme by stripping css and javascript that was no longer necessary
+
+
+--------------------------------
+- style.css - new version number
+- header.php - changed output so the new styles can be applied
+- footer.php - fixed an issue with 4 and 5 columns in footer on mobile devices
+- functions.php - script inclusion
+- functions-enfold.php - header script changes
+- includes/admin/helper-compat-update.php - update file for latest theme versions
+- includes/admin/register-admin-options.php - new options for header, as well as import/export tab
+- includes/loop-index.php - better title tag for images
+- index.php - fixed a small issue with blog breadcrumb
+- includes/helper-menu-main.php - moved the html output for the main menu into a separate file
+- includes/helper-template-logic.php - added option to create custom blog layout for the default blog
+- sidebar.php - added sidebar overwrite variable for custom blog layouts
+
+- folder css:
+	- css/dynamic.css - small color changes for the new header settings
+	- css/layout.css - major additions for the new header styles
+	- css/shortcode.css - Improved styles for various shortcodes
+	- css/dynamic.css - Added styles for transparent header
+	- css/base.css - Fixed a webkit bug with overlays
+	- added: RTL stylesheet
+	- added: Print stylesheet (first draft)
+
+- folder js:
+	- improved: performance and reliability of video api
+	- fixed: a few internet explorer related issues with fullscreen slider and fullscreen sections
+	- added: fixed backgrounds for mobile devices. (parallax bgs will also be set to fixed in order to save computing power)
+	- added maps api
+
+- folder config-layerslider: updated to the latest version
+
+- folder framework:
+	- updated: to the latest version
+	- added: import/export functionality for theme settings
+	- added: database update trigger when new theme version is activated
+	- added: submenu items for mobile menu can now be hidden and shown only when the parent menu item is clicked
+	- improved: page loading speed 
+	- removed: old dropdown mobile menu, because it didn’t work well with all the new header styles
+
+- folder config-templatebuilder:
+	- added: Goggle Maps template builder element
+	- added: option to display a "scroll down" button to the fullscreen slider
+	- added: options for video backgrounds and video sliders on mobile devices
+	- improved: video api now able to center video in ie8
+	- fixed: a bug that produced invalid html when using multiple fullwidth elements
+	- fixed: a firefox bug with colorpickers
+	- fixed: a bug with button element links
+	- fixed: a bug with the table builder that occurred when only a single column was created
+
+-folder lang:
+	- updated: italian language files
+	- updated: german  language files
+	- updated: spanish language files
+	
+- folder config-woocommerce:
+	-fixed: some minor stlying issues
+	-fixed: display of the country selector on different skins
+	-improved: support for child themes which want to overwrite the template structure
+	
+- folder config-layerslider:	
+	- update to the latest version
+	
+	
+
+2014 February 21 - Version 2.5.4
+- style.css - new version number
+- js/shortcode.js - improved youtube integration
+- folder: config-templatebuilder: small adjustments and bugfixes
+
+
+
+2014 February 21 - Version 2.5.3
+- style.css - new version number
+- folder js - improved performance and reliability of video api
+
+
+2014 February 13 - Version 2.5.2
+
+Files that changed:
+- style.css - new version number
+
+- js/avia.js - improved waypoint script which tracks where on the site you currently are on one page portfolios
+- js/shortcode.js - added a few resizing trigges for the waypoint script
+- config-wpml/config.php -  fixed a small bug
+- header.php - added do_action hook “ava_after_main_container” at the last line of header.php in case you want to execute code at the end of the header file
+
+- folder woocommerce: updated for version 2.1 of woocommerce:
+	-re added dropdowns for Column and Product Count in backend
+	- fixed a small styling glitch on accoutn page
+	- removed some php warnings and switched deprecated hooks/filters for new ones 
+
+
+- folder config-templatebuilder:
+	- added filter for “avf_parallax_speed” so speed of parallax sections can be changed
+
+
+2014 February 12 - Version 2.5.1
+
+Files that changed:
+- style.css - new version number
+- includes/admin/dummy.xml - added masonries and parallax pages to the demo content
+- fixed a small issue with parallax effect not activating when no fullscreen slider is present on the page
+
+2014 February 10 - Version 2.5
+
+What changed?
+The Fullscreen Slideshow, as well as the Easy Slider now support direct embedding of videos. We also revamped the button system for the slideshows so you can now attach one or two call to action buttons to each of those slides. Please check your existing slideshow links, it might be necessary to update them after the update.
+
+Sections can also display background Videos now and we also added an option for parallax scrolling of background images in sections.
+
+In short: a lot of video related improvements along with a lot of smaller improvements and bugfixes. Enjoy!
+
+
+Files that changed:
+- style.css - new version number
+- config-woocommerce/woocommerce-mod.js - fixed an issue with the cart display when woocommerce multilingual is used
+- js/avia.js - updated browser detection script, added vimeo api helper, fixed section scroll problem
+- js/shortcodes.js - improved slideshow script to work with videos, added parallax script for section backgrounds, improved fullscreen slider parallax performance
+- css/shortcodes.css - styling rules for slideshow video
+- css/layout.css - fixed 2 small issues with lightbox modal window
+- css/grid.css - improved styling of 1/4 column for ipad/tablets and 1/5 columns on landscape mobile
+- css/dynamic.css - improved bbpress 2.5 styles
+- config-wpml/config.php - Add filter for wpml author translation, removed another function that is no longer necessary with last wpml version
+- author.php + includes/loop-about-author.php + includes/loop-index.php - added WPML filter, fixed a bug with author avatar
+- header.php: added meta tag to prevent accidental activation of compatibility view in IE
+- footer.php: copyright text is now shortcode enabled
+- includes/admin/register-portfolio.php: removed a php warning message
+
+
+- folder lang:
+	- added: italian translation
+	- fixed: typo in dutch version
+
+
+- folder config-bbpress:
+	- fixed: styling for bbpress 2.5+
+	
+- folder config-templatebuilder:
+	- added: fullscreen slider now supports videos from youtube, vimeo as well as webm, ogv and mp4 files
+	- added: optional 2nd call to action button for fullscreen slider, more button styles
+	- added: call to action button option for Fullwidth Easy Slider
+	- added: additional up/down slide transition for all slideshows
+	- added: background video for section shortcode
+	- added: parallax background images for section shortcode
+	- added: the Horizontal Ruler element now allows negative values to reduce whitespace between elements
+	- fixed: error message when php messaging in strict mode
+	- fixed: link issues with iconbox and iconlist
+	- fixed: some warnins in php 5.4
+	- fixed: bug with color section shortcode interfering with visual representation of shortcodes when in backend
+	- fixed: bug with dragging elements in the builder
+	- improved: masonry read more button will now apply the activated filters
+	- improved: Backend View in Firefox
+	- improved: styling of linked Icons in iconbox
+
+	
+	
+-folder framework:
+	- updated: to the latest version
+	- added: wpml filter
+	- fixed: mega menu styling in backend of wordpress 3.8+
+	- updated: envato auto update script
+
+
+2014 January 09 - Version 2.4.5
+
+Files that changed:
+- style.css - new version number
+- includes/helper-post-format.php: improved regex for URL detection in post format
+- config-wpml/config.php - removed a function that is no longer necessary with latest wpml version
+- template-builder.php - improved functionality of the preview button when in advanced builder
+- admin/register-portfolio.php - small bugfix for rewrite rules
+- config-gravityforms/config.php - add gravityforms button to textbox editor (template builder)
+- config-woocommerce/config.php - Added code for gallery thumbnail description, renamed featured image filter function
+- config-bbpress/bbpress-mod.css - fixed a float bug when in single user view
+- includes/loop-about-author.php + includes/loop-comments.php + includes/loop-index.php: added alt tag for gravatar icon
+- js/avia.js - updated browser detection and waypoint script
+
+-folder framework:
+	- updated to the latest version
+	- improved: styling improvements for wordpress 3.8
+	- improved: form generator now passes id to hooks so hooked in scripts can manipulate data besser
+	- added: filter to archive title output
+	
+-folder css:
+	-added: a few additional stylings for icon elements
+
+- folder lang:
+	- improved: german translation
+
+- folder config-templatebuilder:
+	- improved: team shortcode to work better with vimeo links
+	- improved: post type options for various elements
+	- added: translation strings for new options
+	- added: link option for iconbox and iconlist
+	- fixed: background positioning bug with fullscreen slideshow
+	- fixed: notice problem for iconfont characters
+	- fixed: page split description
+	- fixed: shortcode in slider caption should work now
+
+	
+	
+	
+2013 December 19 - Version 2.4.4
+Files that changed:
+- style.css - new version number
+- file 404.php fixed a small bug in 
+- folder config-woocommerce: fixed a lightbox issue
+- file functions-enfold.php: small improvement to the ajax search button
+- file includes/admin/register-admin-options.php - removed portfolio slug options from Enfold Admin Area
+- file includes/admin/register-portfolio.php - moved portfolio slug setting to Settings->Permalinks
+- file includes/loop-portfolio-single.php && template-builder.php - small improvements
+
+
+
+
+2013 December 16 - Version 2.4.3
+- new growing online documentation now available here: http://www.kriesi.at/documentation/enfold/
+
+Files that changed:
+- style.css - new version number (accidentally set to 2.5 instead of 2.4.3, will be fixed with next update)
+- includes/helper-social-media.php - added title tag to social icons
+- includes/loop-index.php - increased avatar size, added feature image description
+- footer.php - added title tag to "Scroll to top" button
+- archive.php - added filter for blog layout
+- single.php - small SEO improvement for Blog Label
+- config-wpml/config.php - fixed a bug with the language switcher
+- config-bbpress/bbpress-mod.css - small styling update
+- config-woocommerce/woocommerce-mod.js - fixed a lightbox problem
+- functions-enfold.php - Update post nav for wp 3.8
+
+- folder js: 
+	- added: scrollspy for one page main menu and sections
+	- improved: smooth-scrolling speed and easing was fine tuned	
+	- improved: toggle/tabs	script
+
+- folder css:
+	- css/layout.css - fixed a css rule that accidentally removed the required * from comment forms, Fix for large logos and small screens, Fixed comment form
+	- css/dynamic-css.php - small color additions, some weight improvements of selectors
+	- css/base.css - fixed a bug with image hover overlay causing a page jump. fixed an issue with ie8 not displaying linked images
+	- css/layout.css - small styling improvements, fixed an issue with ie8 not displaying header social icon bar
+	- css/shortcode.css - small styling improvements
+
+- folder lang: updated swedish and german language files, added full romanian translation
+
+- folder config-templatebuilder:
+	- added: section options for full height sections as well as 75%, 50%, and 25% height sections
+	- added: no cropping option for gallery
+	- added: setting which shortcodes should appear in 2nd level shortcode editor
+	- added: heavily improved and re-styled icon shortcode and also added it as a builder element
+	- added: shortcode support for the content slider
+	- added: comments form element for template builder
+	- improved: backend styling for wordpress 3.8+
+	- improved: heavily improved and re-styled special heading element
+	- improved: schema.org markup for some elements
+	- improved: special heading options
+	- improved: postslider
+	- improved: slideshow filter options
+	- fixed: a notice in toggles.php
+	- fixed: a notice in contenslider.php
+	- fixed: a bug with sorting categories for portfolio/masonry/toggles
+	- fixed: google analytics plugin bug
+
+
+- folder framework:
+	- improved: backend styling for wordpress 3.8+
+	- fixed: typo in contact form generator
+
+
+2013 October 30 - Version 2.4.2
+- style.css - new version number
+- folder config-layerslider: updated to version 4.6.5
+
+
+
+2013 October 20 - Version 2.4.1
+- style.css - new version number
+- js/shortcodes.js - fixed small alignement bug in masonry
+
+2013 October 20 - Version 2.4
+
+What changed?
+We added 2 brand new Template Builder Elements: the Fullwidth Masonry and the Fullwidth Masonry Gallery. These Elements allow you to display grids and masonries of Posts, Portfolio items, Products and Images and are perfect for modern magazines, portfolios and photography.
+As always we also added multiple small bugfixes and improvements to the theme as well
+
+Changed Files and Folders:
+- style.css - new version number
+
+folders:
+- folder /js/ - Fix a small issue with menu not switching to mobile, added masonry javascript
+- folder config-templatebuilder: added masonry shortcodes, added option for single blog post layout, fixed bug that removed all content in shortcode editor
+- folder framework: a few bugfixes
+- folder css: various improvements and additions for the masonry element, a few bugfixes for sliders
+- folder inlcudes/admin: new backend options
+- folder lang/ updated with new language files for french and turkish
+
+files:
+- includes/loop-index.php: added display option
+- includes/helper-responsive-megamenu.php: removed unnecessary heading markup to further improve SEO
+- config-gravityforms/config.php - fixed conflict with our own ajax form
+- sidebar.php - added option to hide/display sidebar on smartphones devices
+- config-wpml/config.php - added better post filter for dropdown elements
+
+
+
+2013 October 16 - Version 2.3.3
+- style.css - new version number
+- css/shortcodes.css
+- css/layout.css - new css rules for sidebar on mobile
+- functions-enfold.php - small sidebar fix
+- includes/admin/register-admin-options.php - added "sidebar for smartphone" option
+- sidebar.php - added sidebar for smartphone check
+
+- folder config-templatebuilder:
+	Fixed shortcode-editor bug that removed all existing content 
+	from the editor window when a shortcode with multiple modal 
+	windows was used
+
+
+2013 October 9 - Version 2.3.2
+- style.css - new version number
+- template-builder.php - small config change
+- avia.js - some lightbox script improvements to easier activate a external lightbox
+- shortcode.js - improved toggle behavior
+- includes/helper-responsive-megamenu.php - added shortcode execution to menu title so users can for example add icon to the title
+- includes/admin/register-admin-options.php - added filter to social icon array in header
+- includes/loop-author.php - fixed date translation
+
+- folder css:
+	- small bugfixes and improvements for the new iconfont system
+	- update of some shortcode styles to match the overall theme style (buttons for example)
+
+- folder config-templatebuilder:
+	- improvements to existing shortcodes
+
+- folder lang:
+	- updated german and french translation
+
+- folder framework:
+	- update to the newest version with some small bugfixes
+
+
+
+
+2013 October 1 - Version 2.3.1
+
+- style.css - new version number
+- files: js/avia.js: fixed an issue with ie8 menus
+- folder config-templatebuilder: fixed a small bug with one of the elements. also added a get param to the iconfont to cause a proper cache refresh
+- folder lang: added a first basic czech translation
+
+
+2013 September 30 - Version 2.3
+
+What changed?
+Big one this time: 
+- We did a big SEO change by using more semantic HTML5 markup across the theme, and also added support for schema.org which improves the display of search results on google, bing etc
+- We have completely rewritten the iconfont system and added an Iconfont Manager. You can now generate your own iconfonts on fontello.com and upload them into the theme
+- We also added support for the Revolution Slideshow Plugin. If you have purchased and activated the slider, the theme will add a template builder element for easier usage
+- Lots of smaller bugfixes and changes, among them a major iOS7 compatibility check
+
+In the process a lot of files changed, so we recommend to update the whole themefolder. As always a more detailed changelog bellow:
+
+
+
+- style.css - new version number
+- js/shortcodes.js - changed behavior of css3 animated elements on mobile devices
+- js/avia.js - IE fix for schema markup improvements
+- includes/admin/register-admin-options.php 
+	- added admin option for font uploader at Enfold->General Settings
+	- added youtube, xing, 500px and soundcloud social icon for the header
+
+- folder css:
+	- css/shortcodes.css - fixed a small issue with accented iconbox headings not displaying correctly. fixed blurry font bug on iOS
+	- css/base.css - added new rules for new iconfont managment
+	- css/dynamic-css.php - added new rules for new iconfont managment and html5 elements
+	- css/layout.css - added new rules for new iconfonts, fixed a bug with mobile menu overlapping the default menu
+	-css/grid.css fixed a bug with non responsive layouts	
+
+- folder config-templatebuilder:
+	- update of all shortcodes containing iconfont icons to the new system
+	- fixed a bug that occurred when editing multiple links in multiple textarea elements
+	- added support for Revolution Slider Plugin and a Template Builder element in case users has the Plugin activated
+
+- folder framework:
+	- update to the newest version
+
+- folder config-layerslider:
+	- update to the newest version
+
+
+
+ICONFONT improvement: modified the following template files:
+- functions.php
+- functions-enfold.php
+- includes/related-posts.php 
+- includes/helper-social-media.php
+- config-bbpress/bbpress-mod.css
+- searchform.php
+- footer.php 
+- forum.php 
+- header.php
+- includes/loop-index.php
+- folders: config-woocommerce, config-bbpress, config-templatebuilder
+
+
+SEO improvement: Added schema.org markup function to theme files:
+
+- 404.php 
+- archive.php 
+- author.php 
+- config-woocommerce/config.php 
+- footer.php 
+- forum.php 
+- functions-enfold.php 
+- functions.php 
+- header.php 
+- includes/admin/register-admin-options.php 
+- includes/error404.php 
+- includes/helper-markup.php 
+- includes/helper-post-format.php 
+- includes/loop-about-author.php 
+- includes/loop-archive.php 
+- includes/loop-comments.php 
+- includes/loop-index.php 
+- includes/loop-page.php 
+- includes/loop-portfolio-single.php 
+- includes/loop-search.php 
+- includes/related-posts.php 
+- index.php 
+- page.php 
+- search.php 
+- sidebar.php 
+- single-portfolio.php 
+- single.php 
+- style.css 
+- tag.php 
+- taxonomy-portfolio_entries.php 
+- template-archives.php 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2013 September 18 - Version 2.2
+
+- style.css - new version number
+- css/shortcodes.css - fixed a bug with .avia_start_animation elements causing fixed BG images to shift  
+- css/dynamic.css - adds a few new stylings for the forum  
+- css/bace.css - fixed a bug with firefox and linked images  
+- css/layout.css - added a few styles for various improvements mentioned bellow
+- footer.php - changed arguments of wp nav menu to work better with non-latin languages
+- header - changed arguments of wp nav menu to work better with non-latin languages
+- 404.php - added action that allows you to perform actions like notification to the blog owner if a page is missing
+- functions-enfold.php - removed buggy post nav from forum
+- includes/related-posts.pgp - added additional hooks and config options for different styling possibilities
+- js/avia.js - better detection on when to use the mobile menu
+- js/shortcodes.js - fixed a problem with easyslider, logoslider and content slider in IE 9 + 10
+- archive.php and taxonomy-portfolio_entries.php - added term descriptions
+- includes/admin/register-admin-options.php 
+	- you can now disable the dummy content import button by adding this to functions.php: add_theme_support('avia_disable_dummy_import')
+	- added option to disable search icon in main menu
+
+
+- folder config-woocommerce:
+	- fixed several small issues
+
+- folder config-templatebuilder:
+	- improved: template builder now works with revisions
+	- improved: portfolio layout if no images are selected
+	- added: missing translation strings for visual editor
+	- fixed: toggle active class bug
+	- added: filter for lightbox size
+	- fixed: content slider typo
+	- fixed: bug in firefox with absolute positioned elements within tables
+
+- folder config-bbpress:
+	- improved: lots of small styling improvements to the forum
+
+- folder framework:
+	- update to the newest version
+	- fixed contact form subject guessing code
+	- improved checkbox display and handling in backend
+	- added filter to default fallback menu to add additional items
+
+-folder lang:
+	- added first version for Danish, Spanish, French, Japanese, Russian, Swedish and Dutch
+
+
+2013 September 5 - Version 2.1
+
+please update the whole theme folder. We have changed and added classnames in more than 30 files for better google performance. 
+We also added 2 new Elements (the logo/partner element, which can be displayed either as grid or slider and the content slider element)
+
+
+- style.css - new version number
+- functions.php - include yoast seo compatibility functions
+- functions-enfold.php - Improved ajax search function, easier to hook into it
+- includes/loop-index.php - blog posts will inherit the time format from your wordpress settings page now
+- includes/loop-search.php - improved search output for non template builder pages 
+- includes/helper-responsive-megamenu.php - removed errors thrown in PHP 5.4+
+- includes/register-admin-options.php - added import parent theme settings button for child themes
+- css/shortcodes.css 
+	- fixed: a bug with ajax portfolio views on small screens
+	- improved: toggle compatibility with google maps, videos and floating content
+	- fixed: slightly misaligned iconbox icons
+	-fixed: a bug that distorted section background images on iOS
+
+
+- folder js:
+	- fixed: playing videos within the ajax preview are stopped now if the item is closed
+	- improved: toggle compatibility with google maps and videos
+	- improved: compatibility of w3 total caches inline-JS-minify with the ajax portfolio
+
+
+- folder framework:
+	- improved: small improvements for the auto updater
+	- improved: date format for archive title is now translatable
+	- added: is_feed() check for debugging info to not display it on rss feeds
+	- added: import script for parent theme settings
+	- fixed: an issue with form messages that contain slashes and apostrophes 
+	- fixed: removed errors thrown in PHP 5.4+
+	 
+	- changed: twitter and rss widget now only display a link to those accounts
+
+- folder config-templatebuilder:
+	- added: logo/partner element that can be displayed as either grid or slider
+	- added: content slider element
+	- improved: shortcodes work now in promo box element
+	- improved: you can now set a subject for each form element
+	- improved: fullscreen slider in ie 8
+	- fixed: a bug when using a slideshow that uses the same image more than once
+	- improved: changed php private classes to protected for easier extensions
+
+
+added:
+- folder: config-wordpress-seo for improved compatibility with yoast seo plugin
+- file: tag.php - to make it easier to style the tag pages
+
+
+
+2013 August 21 - Version 2.0.1
+
+please update:
+- style.css - new version number
+- css/shortcodes.css - fixed a problem with icon coloring and centered special headings
+- css/layout.css - fixed a problem with link styling that messed up fullwidth blog pages
+
+
+
+2013 August 19 - Version 2.0
+
+What changed?
+Since the theme continues to do well and we will keep releasing new versions we figured updating should be easier. Thats why you can update now directly from your WordPress Backend with a single click.
+
+Also:
+Lots of small improvements and bugfixes.
+Added support for Twitter Widget Pro
+Added Audio Post Format
+
+
+please update:
+- style.css - new version number
+- css/base.css - improved styling for some contact form validation states
+- css/shortcode.css - fixed a problem with elements inside tab shortcode. improved special heading css & form css
+- css/layout.css - added support for Twitter Widget Pro: 
+		   http://wordpress.org/plugins/twitter-widget-pro/
+
+- includes/related-post.php - fixed a problem with truncated post titles
+- includes/helper-responsive-megamenu.php - only one first level menu item can now be "active"
+- includes/helper-post-format.php - added post format audio
+- functions.php - registered: post format audio
+- functions-enfold.php - fixed a bug that prevented recent post widget from displaying proper posts
+
+
+
+- folder js:
+	- fixed: a Firefox/IE issue with youtube videos overlapping the main menu
+	- fixed: a Problem with the audio player interface not displaying correctly 
+	- improved: click on toggles and tabs now also move the active element into window viewport
+
+
+- folder config-templatebuilder:
+	- fixed: problem with query not being reset after post slider
+	- fixed: error message on admin screen when on a post type without layout builder
+	- improved: special heading now displays better when heading is too long for one line
+
+
+- folder framework:
+	- added: filter for datepicker formating
+	- added: one click theme updates directly from the themes admin panel
+	- added filter for meta name robots
+	
+
+
+2013 August 6 - Version 1.9.1
+
+please update:
+- style.css - new version number
+- functions.php - theme uses the wordpress 3.6 media scripts now
+- css/shortcode.css - fixed a styling problem with the new video shortcode
+- js/shortcode.js - fixed an easyslider problem introduced with WordPress 3.6
+
+
+
+2013 August 6 - Version 1.9
+
+please update:
+- style.css - new version number
+- css/layout.css - various small fixes
+- functions.php
+- functions-enfold.php
+- includes/helper-responsive-megamenu.php
+- includes/helper-conditional-megamenu.php
+- config-woocommerce/config.php - fixed bug with 404 page
+- config-woocommerce/admin-options.php - Added layout options (header, footer etc)
+- config-bbpress/bbpress-mod.css - improved bbpress forum widget stylings
+
+folders to update:
+
+-folder js:
+	-fixed a bug with the easy slider not rotating properly
+
+-folder config-templatebuilder:
+	- fixed: a bug that prevented the layoutbuilder from showing
+	- fixed: a bug that occurs with custom css label and image element
+	- fixed: a bug with the gallery caption
+
+-folder framework:
+	-fixed: required symbol for date input field
+	-added: theme support flag for conditional menu: 
+		add_theme_support('avia_conditionals_for_mega_menu');
+		using the flag  will enable conditional logic for menus 
+		(you can show/hide menu items based on user level, login, current page, etc)
+
+
+
+
+
+
+
+2013 July 25 - Version 1.8.4
+
+please update:
+- style.css - new version number
+
+folders to update:
+
+-folder config-templatebuilder:
+	- fixed: a small bug with toggles and tabs jumping erratically when clicked
+
+2013 July 22 - Version 1.8.3
+
+please update:
+- style.css - new version number
+
+folders to update:
+
+-folder config-templatebuilder:
+	- improved: element builder elements should work better with external shortcodes now 
+	- improved: video builder element should no longer throw off margins on other elements
+	- added: flag for custom tab and toggle ids for prettier url #hashes. 
+		  activated via add_theme_support('avia_template_builder_custom_tab_toogle_id');
+
+
+
+2013 July 22 - Version 1.8.2
+
+please update:
+- style.css - new version number
+- js/avia.js - fixed a javascript error that prevented various enfold functions from working properly
+
+
+2013 July 16 - Version 1.8.1
+
+please update:
+- style.css - new version number
+- folder config-layerslider: re-added the avia-samples folder for backwards compatibility with older layerslider demo slide imports
+
+
+
+
+2013 July 16 - Version 1.8
+
+Added 31 detailed PSD files to the download
+
+files to update:
+- style.css - new version number
+- css/shortcode.css - fixed an alignment problem with extra large layouts and slideshow captions. added datepicker css. fixed ie9 portfolio problem
+- css/dynamic.css.php - added datepicker colors
+- functions.php - enqueueing child theme style.css as last css file for easier css overwrites
+- incldues/helper-template-logic.php - fixed a bug that prevented backend page and post filtering/searching 
+
+
+folders to update:
+
+-folder config-templatebuilder: 
+	- added offset option to blog, postslider, product_grid and productslider
+	- added various hooks to the portfolio element for advanced customization options
+	- added datepicker to contact form builder
+	- added add_theme_support('avia_template_builder_custom_css') flag. 
+	   if enabled each template builder element gets an input field to add a custom css class
+	
+-folder framework:
+	- improved google maps widget. allows to set custom height
+	- added datepicker html to the form generator
+	- fixed a bug with old lightbox scripts which do no load jquery sortable
+
+-folder config-layerslider:
+	- updated layerslider to version 4.6 which should fix any issues with scaling property not working
+	- removed example layerslider slides and replaced it with custom ones to make the final theme zip file smaller
+	  this should result in less problems when uploading the theme on cheap servers
+
+
+2013 June 30 - Version 1.7.1
+
+files to update:
+- style.css - new version number
+- functions.php - when using super large layout use super large image dimensions now
+- css/layout.css - added instagram header social icon
+- includes/admin/register-admin-options.php - added instragram social icon for header
+- tempalte-archive.php - fixed a thumbnail issue with portfolio items
+- header.php added additional header action for child themes: ava_after_main_menu
+
+
+-folder config-templatebuilder: 
+	- fixed: bug with linkpicker not allowing to select link target blank
+	- fixed: bug with portfolio ajax slideshows not autorotating
+	- fixed: bug with special chars in heading element
+	- fixed: bug with shortcode elements getting the wrong class and behaving eratic
+	- fixed: typos in backend
+	- added: filter hook to change ajax slideshow linking behavior
+
+-folder framework:
+	- improved: mail function now uses wp_mail as default for better plugin compatibility
+	- improved: twitter follower count widget fallback on api errors
+	- improved: added and renamed filter in the avia_logo function 
+		- avia_logo_filter is now avf_logo
+		- avia_logo_headline_filter is now avf_logo_headline
+		- added avf_logo_subtext filter
+	- fixed: issue with widgets displaying wrong thumbnails
+
+-folder config-woocommerce:
+	- fixed: a small z-index issue with submenu dropdowns
+	- fixed: a problem with "submit review" buttons not displaying properly
+	- improved: display of shop and checkout pages on very small mobile screens
+
+
+
+2013 June 18 - Version 1.7
+
+files to update:
+- style.css - new version number
+- config-wpml/config.php - improved setting inheritance of wpml
+- config-bbpress/bbpress-mod.css - improved login widget styling
+- functions.php - added additional image size for fullscreen slider
+- template-builder.php - added check for fullscreen slideshow
+
+folders to update:
+
+-folder css:
+	- added: styles for fullscreen slider
+	- fixed: a problem with fixed/parallax bg images
+	- fixed: a problem with videos
+	- added: clear:both; to various elements of the template builder
+	- improved: tabs with media content (videos, sliders)
+
+-folder framework:
+	-fixed: issue with translation
+	-fixed: problem with text truncation in breadcrumbs
+	-changed: twitter follower count request to work without api 1.1 call
+
+-folder config-templatebuilder: 
+	- added: fullscreen slideshow element
+	- fixed: bug with the postslider count
+	- fixed: icon positioning in shortcode editor
+	- fixed: image element alt/title attribute display
+	- fixed: problem with product grid item count
+	- fixed: a bug with ajax portfolio preview content tinymce editor
+	- fixed: size of ajax slideshow was not passed properly
+	- improved: footer setting behavior
+	- renamed: portfolio grid option descriptions to avoid confusions with "preview images"
+	- renamed: "sidebar" element in builder to "widget area"
+	- you can now chose a unique CSS ID for sections
+		- helps with CSS styling customizations
+		- allows for one page portfolios that link to a section by anchor
+		  eg: (www.mydomain/#about-us)
+
+-folder js:
+	- added: fullscreen slideshow modifications
+	- fixed: minor issues
+	- improved: smooth scrolling for better one page portfolios
+	- fixed: problem with video aspect ratio
+	- fixed: problem with linked images inside layerslider
+	- fixed: bug that prevented the ajax portfolio to work when item was clicked 2 times
+
+-folder config-woocommerce: 
+	-fixed a minor issue with "for sale" label
+	-better password protection support for products
+
+
+2013 June 6 - Version 1.6
+files to update:
+- style.css - new version number
+- functions.php - added charmap symbols for ajax portfolio
+- template-builder.php - template builder pages now can be password protected
+- css/custom.css - added empty media queries to the file, should make customization easier
+
+
+-folder config-templatebuilder: 
+	- added: ajax portfolio option
+	- added: linking to iconbox title, iconlist title and icon shortcode
+	- fixed: portfolio sorting issue
+	- fixed: postslider excerpt behavior
+	- fixed: issue with postgrid and post slider excerpts
+	- improved: styling of single icon shortcode and added position option
+	- improved: several small javascript and css improvements
+	- improved: table shortcode notice prevention
+
+-folder config-woocommerce: 
+	- fixed: small css bugfixes
+	- fixed: shipping options display
+	
+
+	
+-folder framework:
+	- fixed: framework widgets thumbnail notice
+	- fixed: google web fonts not displaying correctly
+	- fixed: breadcrumb translation problem
+	- improved: theme version check for update notification when child theme is active
+
+-folder js: 
+	- improved: some functions (default portfolio) and added script for ajax portfolio, 
+	- fixed: mega menu issues
+	- added: blank links are not clickable any longer
+	- fixed: issue with jumping images
+	- fixed: mobile menu showing when it shouldnt
+
+-folder css: several bugfixes and new styles for advanced builder elements
+
+
+
+2013 May 30 - Version 1.5.1
+files to update:
+- style.css - new version number
+- sidebar.php - fixed a bug that prevented custom widgets to display properly
+- css/shortcode.css - fixed a bug with flickering tabs
+
+2013 May 29 - Version 1.5
+
+What changed:
+Version 1.5 is a release for a lot of smaller bugs fixes and a ton of usability related refinements.
+We added small improvements to various template builder elements (usually means a few more options to choose from)
+We also improved the SEO of the theme (better heading structure, more alt/title tags, added support for google rich snippets for breadcumb navigation, Team members and Products)
+
+
+
+files to update:
+- style.css - new version number
+- css/layout.css - fixed several small styling issues
+- css/shortcode.css - fixed a bug with portfolio items in super large width, improved tabs to better work with videos/iframe/map content
+- css/grid.css - fixed an issue with shopping cart not visible in boxed layout
+- css/dynamic.css.php - minor improvements, fixed a bug that prevented header from displaying background images properly
+- functions-enfold.php - small additions like improved SEO for breadcrumb
+- includes/helper-post-format.php - SEO improvements
+- sidebar.php - added filter options
+- index.php - SEO improvements
+- includes/helper-social-media.php - social media icons open external site in new window
+- includes/helper-post-format.php - SEO improvements
+-js/shortcode.js - added portfolio height check on image load
+-js/avia.js - minor improvements
+
+
+
+
+-folder woocommerce: several smaller styling bugfixes. Also:
+	fixed an issue with single page sidebar position
+	fixed an issue with header and cart not displaying correctly
+
+-folder config templatebuilder: various improvements and bugfixes to the builder and its shortcodes (eg apostrophe handling in shortcodes, better handling of unexpected nested shortcodes, improvement of database queries for better performance and less memory usage)
+
+-folder framework: several bugfixes, improvement to the form builder
+
+
+2013 May 2st - Version 1.4
+
+- added WooCommerce support to the theme. Enfold should work without any issues now when used with the latest version of WooCommerce
+- added new template builder elements: Product Grid and Product Slider
+- fixed a few small bugs
+- improved theme SEO
+- improved child theme support
+- slightly improved various template builder elements (better blog options, image element linkable, refined progress bar etc... And no worries. even more coming soon!)
+- improved blog fullsize layout
+- update the Framework to the latest version
+
+How to update: unfortunately the changes affected almost all of the files used by the theme so we recommend to replace your existing theme folder with the new version. If you want to use WooCommerce and the styling seems messed up make sure that you re-save the styling options in your backend once, so the cached stylesheet is regenerated.
+
+
+
+
+2013 April 25 - Version 1.3.1
+files to update:
+- style.css - new version number
+- css/layout.css - fixed blank pages
+
+
+2013 04 25 - Version 1.3
+
+What changed?
+- Added the option for an extra wide responsive layout for screens which are larger than 1300px
+- The theme now comes with 2 options for mobile menus to choose from: you can either select a classic select dropdown or a more modern slide-out-menu
+- added a fixed header version for the social icon header
+- Social icon headers now allow you to add a info line like phone number in addition to the secondary menu and social icons
+- Improved the team Element on mobile devices
+- Fixed various small Bugs, some of them IE8 related some of them Firefox related
+- Editing the copyright text in your footer is now possible from your backend
+- Better Related Images that now work and look good on high resolution screen
+
+
+
+files to update:
+style.css - new version number
+- css/base.css - fixed a bug with input validation not displaying correctly
+- css/dynamic.css - added colors for the new slide out mobile menu
+- css/grid.css - added an extra large width
+- css/layout.css - added styles for the new slide out mobile menu
+- css/shortcode.css - improved mobile version of the team element
+- config-templatebuilder/avia-shortcodes/gallery.php - fixed a bug with gallerys not displaying correctly
+- header.php - added a new wrapper div around the content
+- footer.php - closed the new wrapper div
+- functions-enfold.php - fixed an issue with the title not linking to the correct archive page on archives
+- includes/admin/register-admin-options.php - new option in backend for the extra large width, footer copyright and header phone
+- js/avia.js - added javascript function for new slide out menu
+- includes/related-posts.php - modifed related posts
+- archive.php
+
+folders to update:
+folder framework - minor fixes and google maps widget improvement
+folder config-templatebuilder - changed translation strings in all files
+
+
+
+2013 04 20 - Version 1.2
+files to update:
+style.css - new version number
+folder css:
+	file layout.css - some minor bugfixes, improvements to the fullwidth blog layout, added styles for the scroll to top button
+	file base.css - added styling for html5 form fields to improve plugin compatibility
+	file shortcode.css - refinements for section shortcode
+	file dynamic.css - added styling rules
+
+file functions.php - improvements for better child theme compatibility
+file includes/adin/helper-responsive-megamenu.php - mega menu titles can now link to their link targets
+file js/avia.js - added smoothscrolling for anchor links and script for scroll to top button
+
+
+folder: config-templatebuilder/avia_shortcodes/ - small improvements to various builder elements
+folder: config-layerslider - update to the latest version
+
+
+
+2013 04 15 - Version 1.1
+files to update:
+style.css - new version number
+
+folder: css - added several improvements to allow boxed layouts
+folder: includes/admin/ - added several improvements to allow boxed layouts, added 4 new layouts
+folder: images: added new background images for the new layouts
+file: config-bbpress/bbpress-mod.css - improved forum styles
+
+
+
+2013 04 14 - Version 1.0.1
+files to update:
+style.css - new version number
+config-templatebuilder/avia-shortcodes/buttons.php - fixed a css issue
+config-templatebuilder/avia-shortcodes/testimonials.php - fixed an error when no avatar was selected
+config-templatebuilder/avia-shortcodes/slideshow_fullsize.php - small improvements
+config-layerslider/config.php - fixed a child theme issue
+includes/admin/register-backend-styles.php - added a style filter so child themes can easier create new backend styling options, fined tuned a few styles
+css/dynamic-css.php - fixed a bug that prevented footer links from having the correct color
+css/layout.css - fixed an iOS display bug with the header
+css/shortcodes.css -  improved section element styling and contact form styling
+functions-enfold.php - improved ajax search function
+searchform.php - fixed a bug that prevented the form to display the correct search term
+
+
+
+folders to update:
+/config-layerslider/: updated to the latest version of the layerslider plugin
+/framework/: new small improvements
+/js/ small mobile view improvements
+
+
+2013 04 12 - Version 1.0
+Release

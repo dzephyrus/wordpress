@@ -9,6 +9,38 @@ border: 10px solid #fff
 .video_section{
 background-color: black;
 }
+.fix-text {
+    display: -webkit-box;
+    line-height: 1.3;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.fix-text3 {
+    display: -webkit-box;
+    line-height: 1.3;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.m-0{
+margin: 0px;
+}
+.w-100{
+width:100%;
+}
+pt-0{
+padding-top:0px
+}
+pt-1{
+padding-top: 4px;}
+pt-2{
+padding-top: 8px;}
+pt-3{
+padding-top: 16px;}
+
 .container {width:100%;} .container .av-content-small.units {width:73%; }
 			
 			  .responsive .boxed#top , .responsive.html_boxed.html_header_sticky #header, 

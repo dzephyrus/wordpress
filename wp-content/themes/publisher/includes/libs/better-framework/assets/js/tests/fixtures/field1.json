@@ -1,8 +1,0 @@
-{
-  "id": "title",
-  "component": "TextControl",
-  "args": {
-    "type": "text",
-    "label": "Tab Title"
-  }
-}
